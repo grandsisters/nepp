@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원 가입</title>
+  </head>
+  <body>
+    <h1>회원 가입을 환영합니다</h1>
+    <form action="https://image.ajunews.com/content/image/2021/02/26/20210226075111412332.jpg">
+      <fieldset>
+        <legend>사용자 정보</legend>
+        <ul>
+          <label
+            ><li>
+              아이디
+              <input type="text" placeholder="4자 ~ 10자 사이, 공백없이" /></li
+          ></label>
+          <label
+            ><li>이메일<input type="email" /></li
+          ></label>
+          <label
+            ><li>
+              비밀번호<input
+                type="password"
+                placeholder="문자와 숫자, 특수 기호 포함"
+              /></li
+          ></label>
+          <label
+            ><li>비밀번호 확인<input type="password" /></li
+          ></label>
+          <label
+            ><li>
+              가입 경로<select>
+                <option value="blog">블로그</option>
+                <option value="search">검색</option>
+                <option value="sns">sns</option>
+                <option value="etc">기타</option>
+              </select>
+            </li></label
+          >
+          <li>메모<textarea placeholder="남길 말씀이 있다면 여기에"></textarea>
+            <label></li></label>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>이벤트와 새로운 소식</legend>
+        <label><input type="radio" name="mail" />메일 수신</label>
+        <label><input type="radio" name="mail" />메일 수신 안 함</label>
+      </fieldset>
+      <input type="submit" value="가입하기"/>
+      <input type="reset" value="취소"/>
+    </form>
+  </body>
+</html>
