@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert 구현</title>
+    <style>
+      .alert-box {
+        border-radius: 4px;
+        border: 1px solid;
+        padding: 10px;
+        height: 650px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .alert {
+        border: 1px solid;
+        border-radius: 4px;
+        padding: 20px;
+        text-align: center;
+      }
+      .alert-primary {
+        color: rgb(127, 187, 244);
+        background-color: rgb(59, 62, 62);
+        border-color: rgb(27, 71, 134);
+      }
+      .alert-secondary {
+        color: rgb(191, 186, 178);
+        background-color: rgb(61, 63, 64);
+        border-color: rgb(78, 83, 84);
+      }
+      .alert-success {
+        color: rgb(203, 199, 193);
+        background-color: rgb(54, 79, 70);
+        border-color: rgb(66, 103, 86);
+      }
+      .alert-danger {
+        color: rgb(222, 133, 141);
+        background-color: rgb(84, 36, 40);
+        border-color: rgb(119, 40, 48);
+      }
+      .alert-warning {
+        color: rgb(246, 221, 143);
+        background-color: rgb(97, 80, 25);
+        border-color: rgb(135, 106, 25);
+      }
+      .alert-info {
+        color: rgb(202, 197, 191);
+        background-color: rgb(30, 82, 93);
+        border-color: rgb(31, 113, 130);
+      }
+      .alert-light {
+        color: rgb(174, 168, 158);
+        background-color: rgb(48, 49, 50);
+        border-color: rgb(55, 55, 86);
+      }
+      .alert-dark {
+        color: rgb(217, 215, 210);
+        background-color: rgb(69, 72, 74);
+        border-color: rgb(84, 89, 92);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert-box">
+      <div class="alert alert-primary">
+        A simple primary alert-check it out!
+      </div>
+      <div class="alert alert-secondary">
+        A simple secondary alert-check it out!
+      </div>
+      <div class="alert alert-success">
+        A simple success alert-check it out!
+      </div>
+      <div class="alert alert-danger">A simple danger alert-check it out!</div>
+      <div class="alert alert-warning">
+        A simple warning alert-check it out!
+      </div>
+      <div class="alert alert-info">A simple info alert-check it out!</div>
+      <div class="alert alert-light">A simple light alert-check it out!</div>
+      <div class="alert alert-dark">A simple dark alert-check it out!</div>
+    </div>
+  </body>
+</html>
