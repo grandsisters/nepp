@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card 구현</title>
+    <style>
+      .card {
+        width: 300px;
+        border: 1px solid white;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .card-imgae {
+        display: block;
+        width: 100%;
+      }
+      .card-body {
+        padding: 3px;
+        width: 100%;
+        height: 100%;
+      }
+      .card-title {
+        color: white;
+      }
+      .card-content {
+        color: white;
+      }
+      .btn {
+        border: 1px solid white;
+        border-radius: 4px;
+      }
+      .btn-blue {
+        color: white;
+        background-color: blue;
+      }
+      .btn-blue:hover {
+        color: blue;
+        background-color: white;
+        border-color: blue;
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://dnvefa72aowie.cloudfront.net/origin/article/202109/BFF7972F1724CB4C647237B6BF7D8CAC68EED4369EE06F29908C1A01CF634F66.jpg?q=82&s=300x300&t=crop"
+      />
+      <div class="card-body">
+        <h3 class="card-title">전자레인지</h3>
+        <p class="card-content">
+          전자레인지는 고주파로 가열하는 조리 기구이다.전자 레인지라는 이름은
+          일본에서 만들어 붙인 일본식 조어로 정확한 명칭은 극초단파 오븐 또는
+          마이크로웨이브 오븐이다.
+        </p>
+        <button class="btn btn-blue">
+          <a
+            href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%A0%84%EC%9E%90%EB%A0%88%EC%9D%B8%EC%A7%80"
+            >사러가기</a
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
