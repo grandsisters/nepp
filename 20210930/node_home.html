@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>node.js header 구현</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      header {
+        padding: 5px;
+        text-align: center;
+      }
+      .link-list {
+        display: flex;
+        justify-content: center;
+      }
+      .link-item {
+        list-style: none;
+        padding: 0px 6px;
+      }
+      .link-item:hover {
+        text-decoration: underline;
+      }
+      .link-item + .link-item {
+        border-left: 1px solid white;
+      }
+      #header-logo {
+        width: 122px;
+        height: 74px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      #main {
+        text-align: center;
+      }
+      .this {
+        color: green;
+      }
+      .this:hover {
+        cursor: pointer;
+        background-color: green;
+        color: white;
+      }
+      .version {
+        font-size: 30px;
+      }
+      .download {
+        width: 250px;
+        background-color: green;
+      }
+      .download:hover {
+        background-color: rgb(65, 124, 65);
+        cursor: pointer;
+      }
+      .in-div {
+        color: gray;
+        font-size: 13px;
+      }
+      .in-div + .in-div {
+        border-left: 1px solid white;
+        padding: 1px;
+      }
+      .download-box {
+        display: flex;
+        justify-content: center;
+      }
+      .which-one {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img id="header-logo" src="https://nodejs.org/static/images/logo.svg" />
+      <nav class="header-nav">
+        <ul class="link-list">
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/" target="_blink">홈</a>
+          </li>
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/about/" target="_blink">ABOUT</a>
+          </li>
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/download/" target="_blink"
+              >다운로드</a
+            >
+          </li>
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/docs/" target="_blink">문서</a>
+          </li>
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/get-involved/" target="_blink"
+              >참여하기</a
+            >
+          </li>
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/security/" target="_blink">보안</a>
+          </li>
+          <li class="link-item">
+            <a href="https://nodejs.org/ko/blog/" target="_blink">뉴스</a>
+          </li>
+          <li class="link-item">
+            <a href="https://openjsf.org/certification/" target="_blink"
+              >CERTIFICATION</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <p>
+        Node.js는
+        <a class="this" href="https://v8.dev/">Chrome V8 JavaScript 엔진</a>으로
+        빌드된 JavaScript 런타임 입니다.
+      </p>
+      <h2>다운로드 - Windows (x64)</h2>
+      <div class="download-box">
+        <div class="which-one">
+          <div class="download">
+            <p class="version">14.18.0 LTS</p>
+            안정적, 신뢰도 높음
+          </div>
+          <a class="in-div" href="https://nodejs.org/ko/download/"
+            >다른 운영 체제</a
+          >
+          <a
+            class="in-div"
+            href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V14.md#14.18.0"
+            >변경사항</a
+          >
+          <a
+            class="in-div"
+            href="https://nodejs.org/dist/latest-v14.x/docs/api/"
+            >API 문서</a
+          >
+        </div>
+        <div class="which-one">
+          <div class="download">
+            <p class="version">16.10.0 현재 버전</p>
+            최신 기능
+          </div>
+          <a class="in-div" href="https://nodejs.org/ko/download/"
+            >다른 운영 체제</a
+          >
+          <a
+            class="in-div"
+            href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V16.md#16.10.0"
+            >변경사항</a
+          >
+          <a
+            class="in-div"
+            href="https://nodejs.org/dist/latest-v16.x/docs/api/"
+            >API 문서</a
+          >
+        </div>
+      </div>
+      <p>
+        LTS 일정은
+        <a class="this" href="https://nodejs.org/ko/about/releases/"
+          >여기서 확인하세요.</a
+        >
+      </p>
+    </main>
+  </body>
+</html>
