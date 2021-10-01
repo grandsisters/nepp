@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tolltip 구현</title>
+    <style>
+      .tooltip-wrapper {
+        position: relative;
+      }
+      .tooltip {
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 5%;
+        z-index: 1px;
+      }
+      .btn {
+        background-color: white;
+        display: inline-block;
+      }
+      .tooltip-wrapper:hover > .tooltip {
+        display: block;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tooltip-wrapper">
+      <button class="btn">tooltip</button>
+      <div class="tooltip">this is tooltip</div>
+    </div>
+  </body>
+</html>
