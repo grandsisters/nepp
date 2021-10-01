@@ -7,6 +7,9 @@
     <title>node.js header 구현</title>
     <style>
       body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         margin: 0;
         background-color: black;
       }
@@ -38,6 +41,7 @@
         color: white;
       }
       #main {
+        flex: 1;
         text-align: center;
       }
       .this {
@@ -73,6 +77,14 @@
       }
       .which-one {
         padding-left: 20px;
+      }
+      .footer {
+        display: flex;
+        justify-content: center;
+      }
+      .footer-logo {
+        width: 120px;
+        height: 37px;
       }
     </style>
   </head>
@@ -168,5 +180,33 @@
         >
       </p>
     </main>
+    <footer class="footer">
+      <div>
+        <div>
+          <img
+            class="footer-logo"
+            src="https://nodejs.org/static/images/openjs_foundation-logo.svg"
+          />
+        </div>
+        <p>
+          © OpenJS Foundation. All Rights Reserved. Portions of this site
+          originally © Joyent.
+        </p>
+        <p>
+          Node.js is a trademark of Joyent, Inc. and is used with its
+          permission.<br />
+          Please review the Trademark List and Trademark Guidelines of the
+          OpenJS Foundation.
+        </p>
+        <p>Node.js Project Licensing Information.</p>
+      </div>
+      <ul>
+        <li>Edit On GitHub</li>
+        <li>Node.js 이슈 보고</li>
+        <li>웹사이트 이슈 보고</li>
+        <li>도움 얻기</li>
+        <li>Contributing For Nodejs.org</li>
+      </ul>
+    </footer>
   </body>
 </html>
