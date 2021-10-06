@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+      }
+
+      .img-menu {
+        width: 16px;
+        height: 16px;
+      }
+
+      .header-list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .img-menu-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .img-menu-wrapper:hover {
+        background-color: rgba(60, 64, 67, 0.08);
+      }
+
+      .header-list > li {
+        margin-left: 15px;
+      }
+
+      .header-list > li > a:hover {
+        text-decoration: underline;
+      }
+
+      .btn-login {
+        width: 96px;
+        height: 36px;
+        border-radius: 4px;
+        color: #fff;
+        background: #1a73e8;
+        border: none;
+        margin: 0 8px;
+        cursor: pointer;
+      }
+      a {
+        color: unset;
+        text-decoration: none;
+      }
+      .main-wrapper {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .btn {
+        border: none;
+        padding: 10px 20px;
+        line-height: 1;
+        border-radius: 4px;
+        margin: 0 10px;
+      }
+
+      .input-wrapper {
+        max-width: 584px;
+        width: auto;
+        border: 1px solid #dfe1e5;
+        border-radius: 24px;
+        height: 44px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .img-search {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+      }
+
+      .input-search {
+        flex: 1;
+        border: none;
+        outline: none;
+      }
+
+      .img-keyboard {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+      }
+      .img-mic {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+      }
+
+      .tooltip-wrapper {
+        position: relative;
+      }
+      .tooltip-wrapper:hover > .tooltip-keyboard {
+        display: block;
+      }
+      .tooltip-keyboard {
+        position: absolute;
+        width: 80px;
+        padding: 5px 10px;
+        background: #000;
+        color: #fff;
+        left: -15px;
+        display: none;
+      }
+
+      footer {
+        background: #f2f2f2;
+        color: #0000008a;
+      }
+
+      .footer-top {
+        padding: 15px 30px;
+      }
+      .footer-bottom {
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+      }
+      @media only screen and (max-width: 1200px) {
+        .footer-bottom {
+          justify-content: space-evenly;
+        }
+      }
+
+      .footer-list {
+        display: flex;
+      }
+      .footer-list > li {
+        padding: 0 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="header-list">
+          <li><a href="https://mail.google.com/mail/&ogbl">Gmail</a></li>
+          <li>
+            <a href="https://www.google.co.kr/imghp?hl=ko&ogbl">이미지</a>
+          </li>
+          <li>
+            <div class="img-menu-wrapper">
+              <img
+                class="img-menu"
+                src="https://cdn4.iconfinder.com/data/icons/essential-app-2/16/app-tile-block-menu-setting-256.png"
+              />
+            </div>
+          </li>
+          <li><button class="btn-login">로그인</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="main-wrapper">
+        <img
+          src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        />
+        <div class="input-wrapper">
+          <img
+            class="img-search"
+            src="https://cdn1.iconfinder.com/data/icons/jumpicon-basic-ui-glyph-1/32/-_Magnifier-Search-Zoom--256.png"
+          />
+          <input class="input-search" />
+          <div class="tooltip-wrapper">
+            <img
+              class="img-keyboard"
+              src="https://cdn0.iconfinder.com/data/icons/zondicons/20/keyboard-256.png"
+            />
+            <div class="tooltip-keyboard">입력 도구</div>
+          </div>
+          <img
+            class="img-mic"
+            src="https://cdn1.iconfinder.com/data/icons/feather-2/24/mic-256.png"
+          />
+        </div>
+        <div>
+          <button class="btn">Google 검색</button
+          ><button class="btn">I'm feeling lucky</button>
+        </div>
+        <a>가까운 코로나19 선별진료소를 확인하세요</a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <span>대한민국</span>
+      </div>
+      <div class="footer-bottom">
+        <ul class="footer-list">
+          <li>Google 정보</li>
+          <li>광고</li>
+          <li>비즈니스</li>
+          <li>검색의 원리</li>
+        </ul>
+        <ul class="footer-list">
+          <li>개인정보처리방침</li>
+          <li>약관</li>
+          <li>설정</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

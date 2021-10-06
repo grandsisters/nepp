@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(2 + 3);
+      console.log(10 - 2);
+      console.log(998 * 7);
+      console.log(3 / 2);
+
+      console.log(10 % 3 === 0);
+
+      const A = "나는";
+      const B = " 학생입니다.";
+      const C = A - B;
+      console.log(C);
+
+      // 템플릿 리터럴
+      const name = "홍길동";
+      const message =
+        "나는 " + name + "입니다. " + name + "이라는 이름이 좋습니다.";
+      const message2 = `나는 ${name}입니다. ${name}이라는 이름이 좋습니다.`;
+
+      // 숫자를 문자로 형변환
+      const age = 30;
+      const message3 = `나이는 ${age}입니다.`;
+      console.log(message3);
+      console.log(age + "");
+
+      // 문자를 숫자로 형변환
+      const score = "80";
+      console.log(+score);
+    </script>
+  </body>
+</html>

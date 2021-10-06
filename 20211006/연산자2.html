@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(3 > 2);
+      console.log(3 >= 2);
+      console.log(3 === 2);
+
+      // ==, != 는 사용하지 마시오
+      console.log(3 == "3");
+
+      const A = true;
+      const B = false;
+      const C = true;
+
+      console.log(A && !B && C); // and
+      console.log(A || B); // or
+      console.log(!A); // not
+
+      //   const status = A ? B : C
+      const age = 20;
+      //   const age =7
+      const status =
+        age > 18 ? "어른입니다" : age > 13 ? "청소년입니다" : "어린이입니다";
+
+      const a1 = 3;
+      let a2 = 0;
+
+      a2 += a1;
+      console.log(a2);
+
+      a2 = a2 + a1;
+      console.log(a2);
+
+      a2 += 1;
+
+      a2 *= 2;
+
+      let a3 = 0;
+      const A1 = a3++;
+      console.log(a3);
+      const B1 = ++a3;
+      console.log(A1);
+      console.log(B1);
+    </script>
+  </body>
+</html>

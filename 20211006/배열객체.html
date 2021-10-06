@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array = [1, 2, 3, 4];
+      console.log(array);
+
+      console.log(array[0]);
+
+      //배열의 길이
+      console.log(array.length);
+
+      array.push(10);
+      console.log(array);
+
+      const john = {
+        height: 170,
+        weight: 70,
+      };
+
+      console.log(john.height);
+
+      john.age = 25;
+
+      console.log(john);
+      john.height = 175;
+      console.log(john);
+
+      const a = 3;
+      const b = a;
+      console.log(b);
+
+      const kim = {};
+      //   const lee = kim;
+      const lee = { ...kim };
+
+      lee.score = 60;
+
+      console.log(kim);
+
+      kim.grade = "A";
+
+      console.log(lee.grade);
+
+      console.log(typeof 3);
+      console.log(typeof kim.grade === "number");
+      console.log(typeof kim);
+      console.log(typeof array);
+
+      console.log(Array.isArray(array));
+
+      let minsu;
+      minsu.height;
+    </script>
+  </body>
+</html>
