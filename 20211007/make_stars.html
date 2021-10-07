@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>별찍기</title>
+  </head>
+  <body>
+    <script>
+      // 1. 1부터 계속 늘어나는 별찍기
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+
+      // 2. 역순으로 1까지 작아지는 별찍기
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 1; j <= 5 - i; j++) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+    </script>
+  </body>
+</html>

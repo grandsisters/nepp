@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문-switch</title>
+  </head>
+  <body>
+    <script>
+      const answer = prompt("학점을 입력해주세요.");
+      const score = parseInt(+answer / 10);
+
+      switch (score) {
+        case 10:
+        case 9:
+          document.write("A학점 입니다.");
+          break;
+        case 8:
+          document.write("B학점 입니다.");
+          break;
+        case 7:
+          document.write("C학점 입니다.");
+          break;
+        case 6:
+          document.write("D학점 입니다.");
+          break;
+        case 5:
+          document.write("F학점 입니다.");
+          break;
+        default:
+          document.write("그런 학점은 없습니다.");
+          break;
+      }
+    </script>
+  </body>
+</html>

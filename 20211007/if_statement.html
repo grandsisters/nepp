@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문-if</title>
+  </head>
+  <body>
+    <script>
+      const answer = prompt("숫자를 입력하세요."); // prompt로 받는 것은 숫자를 넣어도 문자가 됨
+      const number = +answer; // 그래서 +로 숫자로 만들어줌
+      //   if (number === 0) {
+      //     alert("0은 3의 배수이지만 아니기로 했습니다.");
+      //   } else if (number % 3 === 0) {
+      //     alert(`${number}는(은) 3의 배수 입니다.`);
+      //   } else {
+      //     alert(`${number}는(은) 3의 배수가 아닙니다.`);
+      //   }
+
+      //   // 리팩토링
+
+      //   if (number === 0 || number % 3 !== 0) {
+      //     alert(`${number}는 3의 배수가 아닙니다.`);
+      //   } else {
+      //     alert(`${number}는 3의 배수입니다.`);
+      //   }
+
+      // 실습
+
+      //   1. 3의 배수면 -> '3의 배수입니다.' number % 3 === 0
+      //   2. 5의 배수면 -> '5의 배수입니다.' number % 5 === 0
+      //   3. 3과 5의 배수면 -> '3과 5의 배수입니다.' number % 3 === 0 && number % 5 === 0
+      //   4. 3의 배수도 아니고 5의 배수도 아니면 -> '아무것도 아닙니다.' else
+      //   5. 0은 배수에서 제외
+
+      if (number % 3 === 0 && number % 5 === 0 && number !== 0) {
+        alert(`${number}는 3과 5의 배수입니다.`);
+      } else if (number % 3 === 0 && number !== 0) {
+        alert(`${number}는 3의 배수입니다.`);
+      } else if (number % 5 === 0 && number !== 0) {
+        alert(`${number}는 5의 배수입니다.`);
+      } else if (number === 0) {
+        alert("0은 제외하기로 했습니다.");
+      } else {
+        alert(`${number}는 아무것도 아닙니다.`);
+      }
+
+      // 0일때의 조건을 가장 위로 해서 코드를 줄여보자
+
+      if (number === 0) {
+        alert("0은 제외하기로 했습니다.");
+      } else if (number % 3 === 0 && number % 5 === 0) {
+        alert(`${number}는 3과 5의 배수입니다.`);
+      } else if (number % 3 === 0) {
+        alert(`${number}는 3의 배수입니다.`);
+      } else if (number % 5 === 0) {
+        alert(`${number}는 5의 배수입니다.`);
+      } else {
+        alert(`${number}는 아무것도 아닙니다.`);
+      }
+
+      // 0일때와 아무것도 아닐 경우를 합칩
+
+      if (number === 0 || (number % 3 !== 0 && number % 5 !== 0)) {
+        alert(`${number}는 아무것도 아닙니다.`);
+      } else if (number % 3 === 0 && number % 5 === 0) {
+        alert(`${number}는 3과 5의 배수입니다.`);
+      } else if (number % 3 === 0) {
+        alert(`${number}는 3의 배수입니다.`);
+      } else if (number % 5 === 0) {
+        alert(`${number}는 5의 배수입니다.`);
+      }
+    </script>
+  </body>
+</html>
