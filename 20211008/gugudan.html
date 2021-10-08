@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구구단</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      .구구단리스트 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      div > div {
+        border: 1px solid white;
+        padding: 10px;
+        margin: 10px 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.write("<h1>구구단</h1>");
+      document.write("<div class='구구단리스트'>");
+      let result = 0;
+      for (let i = 2; i <= 9; i++) {
+        document.write(`<div class=${i}단>`);
+        document.write(`${i}단<br />`);
+        for (let j = 1; j <= 9; j++) {
+          result = i * j;
+          document.write(`${i} X ${j} = ${result}<br />`);
+        }
+        document.write("</div>");
+      }
+      document.write("</div>");
+    </script>
+  </body>
+</html>

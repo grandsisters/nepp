@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자판기</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>조금 허접한 자판기</h1>
+    <div>
+      <button onclick="add(1000,'물')">담기</button>
+      <button onclick="add(1500,'콜라')">담기</button>
+      <button onclick="add(2000,'블랙보리')">담기</button>
+    </div>
+    <div>
+      <button onclick="buy2('물')">물 가격</button>
+      <button onclick="buy2('콜라')">콜라 가격</button>
+      <button onclick="buy2('블랙보리')">블랙보리 가격</button>
+    </div>
+    <script>
+      let totalPrice = 0;
+      const cart = [];
+
+      const add = (price, product) => {
+        totalPrice += price;
+        cart.push(product);
+
+        console.log(`${product}(이)가 카트에 추가되었습니다.`);
+        console.log(
+          `현재 카트에 담긴 상품은 ${cart}이며, 총 가격은 ${totalPrice}원 입니다.`
+        );
+      };
+      const buy2 = (product) => {
+        switch (product) {
+          case "물":
+            console.log("물의 가격은 1000원 입니다.");
+            break;
+          case "콜라":
+            console.log("콜라의 가격은 1500원 입니다.");
+            break;
+          case "블랙보리":
+            console.log("블랙보리의 가격은 2000원 입니다.");
+            break;
+        }
+      };
+    </script>
+  </body>
+</html>

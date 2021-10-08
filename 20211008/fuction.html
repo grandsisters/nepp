@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수</title>
+  </head>
+  <body>
+    <input id="text-input" /> <button onclick="square()">제곱하기</button>
+    <script>
+      const square = function () {
+        const value = document.getElementById("text-input").value;
+        console.log(value * value);
+      };
+    </script>
+  </body>
+</html>

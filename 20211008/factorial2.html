@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1,
+      h4 {
+        text-align: center;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #input {
+        width: 300px;
+        margin: 10px;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>팩토리얼 해드립니다!</h1>
+    <h4>결과는 콘솔로그에!</h4>
+    <div>
+      <input id="input" /><button onclick="facto()">팩토리얼 스타트!</button>
+    </div>
+    <script>
+      const facto = () => {
+        const input = document.getElementById("input").value;
+
+        let result = 1;
+
+        for (i = 1; i <= input; i++) {
+          result += i;
+        }
+
+        console.log(`${input}의 팩토리얼 값은 ${result}입니다.`);
+        // console.log(`${input}의 팩토리얼 값은 ${result}입니다.`);
+        // console.log(result);
+      };
+    </script>
+  </body>
+</html>

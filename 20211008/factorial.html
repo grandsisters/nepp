@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팩토리얼</title>
+  </head>
+  <body>
+    <script>
+      // 1. prompt로 숫자를 받아온다.
+      // 2. 그 숫자의 팩토리얼 수를 출력한다. (console.log(), alert(), document.write())
+      // 3. 팩토리얼 !5 = 1*2*3*4*5
+      // 4. let result = 1;
+
+      const inputNumber = prompt("숫자를 입력하세요.");
+      const number = +inputNumber;
+
+      let result = 1;
+
+      for (let i = 1; i <= number; i++) {
+        result *= i;
+      }
+
+      document.write(`${number}의 팩토리얼 값은 ${result}입니다.`);
+    </script>
+  </body>
+</html>
