@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자판기</title>
+    <style>
+      ul {
+        display: flex;
+        justify-content: space-around;
+      }
+      ul > li {
+        cursor: pointer;
+      }
+      p {
+        text-align: center;
+        margin-top: 100px;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button onclick="insertCoin(100)">100원</button>
+      <button onclick="insertCoin(500)">500원</button>
+      <button onclick="insertCoin(1000)">1000원</button>
+      <button onclick="insertCoin(5000)">5000원</button>
+      <button onclick="insertCoin(10000)">10000원</button>
+      <button onclick="insertCoin(0)">잔돈 반환</button>
+    </div>
+    <ul>
+      <li onclick="buy(500)">물</li>
+      <li onclick="buy(1000)">콜라</li>
+      <li onclick="buy(3000)">햄버거</li>
+      <li onclick="buy(10000)">치킨</li>
+    </ul>
+
+    <p>현재 잔액은 <span id="nowPrice">0</span>원 입니다.</p>
+    <p>현재 주문하신 총 가격은 <span id="nowPrice">0</span>원 입니다.</p>
+    <p id="notice"></p>
+    <div>
+      <button onclick="buy()">구매</button>
+    </div>
+    <script>
+      let totalPrice = 0;
+      let cart = 0;
+
+      const insertCoin = (price) => {
+        switch (price) {
+          case 100:
+            totalPrice += 100;
+            document.getElementById("nowPrice").innerHTML = totalPrice;
+            break;
+          case 500:
+            totalPrice += 500;
+            document.getElementById("nowPrice").innerHTML = totalPrice;
+            break;
+          case 1000:
+            totalPrice += 1000;
+            document.getElementById("nowPrice").innerHTML = totalPrice;
+            break;
+          case 5000:
+            totalPrice += 5000;
+            document.getElementById("nowPrice").innerHTML = totalPrice;
+            break;
+          case 10000:
+            totalPrice += 10000;
+            document.getElementById("nowPrice").innerHTML = totalPrice;
+            break;
+          case 0:
+            totalPrice = 0;
+            document.getElementById("nowPrice").innerHTML = totalPrice;
+            break;
+        }
+      };
+      const buy = (price) => {
+        if (cart <= totalPrice) {
+          totalPrice -= price;
+          document.getElementById("nowPrice").innerHTML = totalPrice;
+        } else {
+          document.getElementById("notice").innerHTML = "잔액이 부족합니다.";
+        }
+      };
+    </script>
+  </body>
+</html>
