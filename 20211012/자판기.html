@@ -75,6 +75,8 @@
           case 0:
             inMyWallet = 0;
             document.getElementById("Wallet").innerHTML = inMyWallet;
+            document.getElementById("notice").innerHTML =
+              "잔돈을 반환했습니다.";
             break;
         }
       };
@@ -100,13 +102,16 @@
       };
 
       const buy = (price) => {
-        if (totalPrice <= inMyWallet) {
+        if (totalPrice <= inMyWallet && totalPrice !== 0) {
           inMyWallet -= totalPrice;
           document.getElementById("Wallet").innerHTML = inMyWallet;
           document.getElementById("nowPrice").innerHTML = 0;
           document.getElementById("notice").innerHTML =
             "계산이 완료 되었습니다.";
           totalPrice = 0;
+        } else if (totalPrice === 0) {
+          document.getElementById("notice").innerHTML =
+            "카트에 물건이 없습니다. 물건을 담아 주세요.";
         } else {
           document.getElementById("notice").innerHTML = "잔액이 부족합니다.";
         }
@@ -115,6 +120,7 @@
       const emptyCart = () => {
         document.getElementById("nowPrice").innerHTML = 0;
         document.getElementById("notice").innerHTML = "카드를 비웠습니다.";
+        totalPrice = 0;
       };
     </script>
   </body>
