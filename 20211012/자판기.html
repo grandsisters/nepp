@@ -33,28 +33,53 @@
       <button onclick="insertCoin(0)">잔돈 반환</button>
     </div>
     <ul>
-      <li onclick="buy(500)">물</li>
-      <li onclick="buy(1000)">콜라</li>
-      <li onclick="buy(3000)">햄버거</li>
-      <li onclick="buy(10000)">치킨</li>
+      <li onclick="cartIn(500)">물</li>
+      <li onclick="cartIn(1000)">콜라</li>
+      <li onclick="cartIn(3000)">햄버거</li>
+      <li onclick="cartIn(10000)">치킨</li>
     </ul>
 
-    <p>현재 잔액은 <span id="nowPrice">0</span>원 입니다.</p>
+    <p>현재 잔액은 <span id="Wallet">0</span>원 입니다.</p>
     <p>현재 주문하신 총 가격은 <span id="nowPrice">0</span>원 입니다.</p>
     <p id="notice"></p>
     <div>
       <button onclick="buy()">구매</button>
+      <button onclick="emptyCart()">카트 비우기</button>
     </div>
     <script>
+      let inMyWallet = 0;
       let totalPrice = 0;
-      let cart = 0;
 
-      const insertCoin = (price) => {
-        switch (price) {
+      const insertCoin = (money) => {
+        switch (money) {
           case 100:
-            totalPrice += 100;
-            document.getElementById("nowPrice").innerHTML = totalPrice;
+            inMyWallet += 100;
+            document.getElementById("Wallet").innerHTML = inMyWallet;
             break;
+          case 500:
+            inMyWallet += 500;
+            document.getElementById("Wallet").innerHTML = inMyWallet;
+            break;
+          case 1000:
+            inMyWallet += 1000;
+            document.getElementById("Wallet").innerHTML = inMyWallet;
+            break;
+          case 5000:
+            inMyWallet += 5000;
+            document.getElementById("Wallet").innerHTML = inMyWallet;
+            break;
+          case 10000:
+            inMyWallet += 10000;
+            document.getElementById("Wallet").innerHTML = inMyWallet;
+            break;
+          case 0:
+            inMyWallet = 0;
+            document.getElementById("Wallet").innerHTML = inMyWallet;
+            break;
+        }
+      };
+      const cartIn = (price) => {
+        switch (price) {
           case 500:
             totalPrice += 500;
             document.getElementById("nowPrice").innerHTML = totalPrice;
@@ -63,27 +88,33 @@
             totalPrice += 1000;
             document.getElementById("nowPrice").innerHTML = totalPrice;
             break;
-          case 5000:
-            totalPrice += 5000;
+          case 3000:
+            totalPrice += 3000;
             document.getElementById("nowPrice").innerHTML = totalPrice;
             break;
           case 10000:
             totalPrice += 10000;
             document.getElementById("nowPrice").innerHTML = totalPrice;
             break;
-          case 0:
-            totalPrice = 0;
-            document.getElementById("nowPrice").innerHTML = totalPrice;
-            break;
         }
       };
+
       const buy = (price) => {
-        if (cart <= totalPrice) {
-          totalPrice -= price;
-          document.getElementById("nowPrice").innerHTML = totalPrice;
+        if (totalPrice <= inMyWallet) {
+          inMyWallet -= totalPrice;
+          document.getElementById("Wallet").innerHTML = inMyWallet;
+          document.getElementById("nowPrice").innerHTML = 0;
+          document.getElementById("notice").innerHTML =
+            "계산이 완료 되었습니다.";
+          totalPrice = 0;
         } else {
           document.getElementById("notice").innerHTML = "잔액이 부족합니다.";
         }
+      };
+
+      const emptyCart = () => {
+        document.getElementById("nowPrice").innerHTML = 0;
+        document.getElementById("notice").innerHTML = "카드를 비웠습니다.";
       };
     </script>
   </body>
