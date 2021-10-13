@@ -9,7 +9,7 @@
 .find_id_text {
   font-weight: bolder;
   font-size: 30px;
-  margin: 0px 0px 8px;
+  margin: 0px 0px 30px;
 }
 input {
   display: block;
@@ -17,8 +17,35 @@ input {
   width: 353px;
   border: 1px solid black;
 }
-input + input {
+.input_button_box + .input_button_box {
   margin-top: 5px;
+}
+.input_button_box {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.request_button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  font-weight: bold;
+}
+.time_remain {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  height: 40px;
+  width: 95px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(15, 15, 15);
+  font-weight: bold;
 }
 .find_button {
   display: block;

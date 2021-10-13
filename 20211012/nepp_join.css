@@ -49,3 +49,34 @@ input + input {
   width: 415px;
   padding-top: 10px;
 }
+
+.input_button_box {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.request_button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  height: 34px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  font-weight: bold;
+}
+.time_remain {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  height: 34px;
+  width: 95px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(15, 15, 15);
+  font-weight: bold;
+}
+.input_button_box + .input_button_box {
+  margin-top: 5px;
+}
