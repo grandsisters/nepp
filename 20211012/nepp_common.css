@@ -37,62 +37,6 @@ a {
   margin-top: 100px;
   background-color: rgb(37, 37, 37);
 }
-.login_box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 557px;
-}
-.login_text {
-  font-weight: bolder;
-  font-size: 30px;
-  margin: 0px 0px 8px;
-}
-.login_sub_text {
-  margin: 0px 0px 35px;
-}
-input {
-  display: block;
-  height: 43px;
-  width: 353px;
-  border: 1px solid black;
-}
-input + input {
-  margin-top: 5px;
-}
-.login_button {
-  display: block;
-  height: 43px;
-  width: 353px;
-  margin-top: 30px;
-  background-color: black;
-  border: 1px solid black;
-  font-size: 18px;
-  font-weight: bolder;
-  cursor: pointer;
-}
-.login_ {
-  text-decoration: none;
-  color: white;
-}
-.login_a:hover {
-  color: gray;
-}
-.login_a::after {
-  content: "|";
-  padding: 10px;
-  color: gray;
-  font-size: 23px;
-}
-.login_a:last-child::after {
-  content: "";
-}
-.botton_bottom {
-  margin-top: 20px;
-  padding-left: 20px;
-}
 .welcome_box {
   display: flex;
   flex-direction: column;

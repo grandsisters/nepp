@@ -1,0 +1,51 @@
+.big_join_box {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* justify-items: center; */
+  height: 900px;
+  margin-top: 100px;
+  background-color: rgb(37, 37, 37);
+}
+.join_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 100%;
+}
+.join_text {
+  font-weight: bolder;
+  font-size: 30px;
+  margin: 0px 0px 8px;
+}
+.input_text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.input_box {
+  display: block;
+  height: 38px;
+  width: 410px;
+  border: 1px solid black;
+}
+input + input {
+  margin-top: 10px;
+}
+.join_button {
+  display: block;
+  height: 43px;
+  width: 410px;
+  margin-top: 30px;
+  background-color: black;
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.check_box {
+  width: 415px;
+  padding-top: 10px;
+}

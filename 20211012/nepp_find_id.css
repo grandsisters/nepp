@@ -1,0 +1,33 @@
+.login_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 557px;
+}
+.find_id_text {
+  font-weight: bolder;
+  font-size: 30px;
+  margin: 0px 0px 8px;
+}
+input {
+  display: block;
+  height: 43px;
+  width: 353px;
+  border: 1px solid black;
+}
+input + input {
+  margin-top: 5px;
+}
+.find_button {
+  display: block;
+  height: 43px;
+  width: 353px;
+  margin-top: 30px;
+  background-color: black;
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+}
