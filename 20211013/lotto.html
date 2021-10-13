@@ -42,9 +42,10 @@
   </head>
   <body>
     <button onclick="printNum()">랜덤</button>
-    <span id="random-num"></span>
+    <!-- <span id="random-num"></span> -->
 
     <div class="lotto-list">
+      <div class="lotto-number">0</div>
       <div class="lotto-number">0</div>
       <div class="lotto-number">0</div>
       <div class="lotto-number">0</div>
@@ -66,12 +67,12 @@
       };
 
       const printNum = () => {
-        const $span = document.getElementById("random-num");
-        $span.innerHTML = getRandom();
+        // const $span = document.getElementById("random-num");
+        // $span.innerHTML = getRandom();
 
         // 6개의 숫자를 담을 빈 배열 선언
         const numberList = [];
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 7; i++) {
           let num = getRandom();
 
           // num이 numberList배열에 이미 있는 값이면
@@ -96,8 +97,8 @@
         // 정렬하기
         const sortedList = numberList.sort((a, b) => a - b);
 
-        for (let i = 0; i < 6; i++) {
-          const $numver = document.getElementsByClassName("lotto-number")[i];
+        for (let i = 0; i < 7; i++) {
+          const $number = document.getElementsByClassName("lotto-number")[i];
           $number.innerHTML = sortedList[i];
         }
       };
