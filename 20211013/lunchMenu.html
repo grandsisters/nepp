@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>점심 메뉴 추천기</title>
+  </head>
+  <body>
+    <script>
+      const list = [
+        "김치찌개",
+        "피자",
+        "돈까스",
+        "햄버거",
+        "짜장면",
+        "김밥",
+        "삶은 계란",
+        "시리얼",
+        "샌드위치",
+        "물",
+      ];
+      const selector = () => {
+        const random = Math.random() * 10;
+        const result = Math.floor(random);
+        return result;
+      };
+      doit = selector();
+      console.log(list[doit]);
+    </script>
+  </body>
+</html>

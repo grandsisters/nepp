@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또 번호 뽑기</title>
+    <style>
+      .lotto-list {
+        display: flex;
+      }
+
+      .lotto-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+      }
+      .lotto-number:nth-child(1) {
+        background-color: hotpink;
+      }
+      .lotto-number:nth-child(2) {
+        background-color: rgb(255, 105, 105);
+      }
+      .lotto-number:nth-child(3) {
+        background-color: rgb(240, 255, 105);
+      }
+      .lotto-number:nth-child(4) {
+        background-color: rgb(108, 105, 255);
+      }
+      .lotto-number:nth-child(5) {
+        background-color: rgb(105, 245, 255);
+      }
+      .lotto-number:nth-child(6) {
+        background-color: rgb(105, 255, 143);
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="printNum()">랜덤</button>
+    <span id="random-num"></span>
+
+    <div class="lotto-list">
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+    </div>
+
+    <script>
+      const getRandom = () => {
+        //0이상 45미만 : 45를 곱한다.
+        //0부터 44까지의 정수 : 소수를 버린다.
+        //1부터 45까지의 정수 : 1을 더한다.
+
+        const random = Math.random() * 45;
+        const result = Math.floor(random) + 1;
+
+        return result;
+      };
+
+      const printNum = () => {
+        const $span = document.getElementById("random-num");
+        $span.innerHTML = getRandom();
+
+        // 6개의 숫자를 담을 빈 배열 선언
+        const numberList = [];
+        for (let i = 0; i < 6; i++) {
+          let num = getRandom();
+
+          // num이 numberList배열에 이미 있는 값이면
+          // 다시 num에 getRandom()으로 새로운 랜덤값을 넣는다.
+
+          let isOld = numberList.includes(num);
+
+          // 방법.1 isOld값 할당해서 판별하기
+          while (isOld) {
+            num = getRandom();
+            isOld = numberList.includes(num);
+          }
+
+          // 방법.2 includes 값 자체로 판별하기
+          // while ((isOld = numberList.includes(num))) {
+          //   num = getRandom();
+          // }
+
+          // 배열에 랜덤 숫자 삽입
+          numberList.push(num);
+        }
+        // 정렬하기
+        const sortedList = numberList.sort((a, b) => a - b);
+
+        for (let i = 0; i < 6; i++) {
+          const $numver = document.getElementsByClassName("lotto-number")[i];
+          $number.innerHTML = sortedList[i];
+        }
+      };
+    </script>
+  </body>
+</html>
