@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팩토리얼3</title>
+  </head>
+  <body>
+    <input id="inputNumber" type="number" />
+    <button onclick="facto()">팩토리얼 시작!</button>
+    <script>
+      const facto = () => {
+        let x = document.getElementById("inputNumber").value;
+        let result = 1;
+
+        for (let i = 1; i <= x; i++) {
+          result *= i;
+        }
+        alert(result);
+      };
+    </script>
+  </body>
+</html>

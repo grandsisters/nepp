@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또2</title>
+    <style>
+      .lotto-list {
+        display: flex;
+        justify-content: center;
+      }
+      .lotto-number {
+        border: 1px solid;
+        border-radius: 50%;
+        padding: 20px;
+        margin: 20px;
+      }
+      .lotto-number:nth-child(1) {
+        background-color: red;
+      }
+      .lotto-number:nth-child(2) {
+        background-color: rgb(255, 217, 0);
+      }
+      .lotto-number:nth-child(3) {
+        background-color: rgb(115, 255, 0);
+      }
+      .lotto-number:nth-child(4) {
+        background-color: rgb(0, 255, 213);
+      }
+      .lotto-number:nth-child(5) {
+        background-color: rgb(0, 47, 255);
+      }
+      .lotto-number:nth-child(6) {
+        background-color: rgb(247, 0, 255);
+      }
+      .lotto-number:nth-child(7) {
+        background-color: rgb(255, 0, 0);
+      }
+      .button-box {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lotto-list">
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+      <div class="lotto-number">0</div>
+    </div>
+    <div class="button-box">
+      <button onclick="makeNumList()">랜덤 로또</button>
+    </div>
+    <script>
+      const makeNum = () => {
+        number = Math.floor(Math.random() * 45 + 1);
+        return number;
+      };
+
+      const makeNumList = () => {
+        const numbers = [];
+
+        for (let i = 0; i <= 6; i++) {
+          let num = makeNum();
+          numbers.push(num);
+
+          let isit = numbers.includes(num);
+
+          while (isit) {
+            num = makeNum();
+            isit = numbers.includes(num);
+          }
+
+          numbers.push[num];
+        }
+        const sortedNumbers = numbers.sort((a, b) => a - b);
+
+        for (let i = 0; i <= 6; i++) {
+          const oneByone = document.getElementsByClassName("lotto-number")[i];
+          oneByone.innerHTML = sortedNumbers[i];
+        }
+      };
+    </script>
+  </body>
+</html>
