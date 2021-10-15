@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval & setTimeout</title>
+  </head>
+  <body>
+    <script>
+      let i = 0;
+
+      const tick = () => {
+        i += 2;
+        console.log(i);
+      };
+
+      // 둘다 자바스크립트의 기능이 아닌 브라우저의 기능
+      // 몇 초 간격으로 함수를 실행
+      setInterval(tick, 1000);
+
+      // 몇 초 뒤에 함수를 실행
+      setTimeout(() => {}, timeout);
+    </script>
+  </body>
+</html>

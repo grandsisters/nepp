@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>발사 버튼</title>
+  </head>
+  <body>
+    <button onclick="fire()">! ! ! 발사 ! ! !</button>
+    <button onclick="stop()">! ! ! 멈춰 ! ! !</button>
+    <h1 id="second"></h1>
+    <script>
+      let intervalId = "";
+      let flag = true;
+      const $span = document.getElementById("second");
+
+      const fire = () => {
+        if (!flag) return;
+        flag = false;
+
+        let i = 5;
+        const tick = () => {
+          $span.innerHTML = i -= 1;
+        };
+        intervalId = setInterval(tick, 1000);
+
+        setTimeout(() => {
+          if ($span === 0) {
+            clearInterval(intervalId);
+            alert("발사 완료!");
+            flag = true;
+          }
+        }, 5000);
+      };
+
+      const stop = () => {
+        clearInterval(intervalId);
+        flag = true;
+        $span.innerHTML = 5;
+      };
+    </script>
+  </body>
+</html>
