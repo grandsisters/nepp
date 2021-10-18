@@ -68,15 +68,13 @@
         for (let i = 0; i <= 6; i++) {
           let num = makeNum();
           numbers.push(num);
-
           let isit = numbers.includes(num);
 
           while (isit) {
             num = makeNum();
             isit = numbers.includes(num);
           }
-
-          numbers.push[num];
+          numbers.push(num);
         }
         const sortedNumbers = numbers.sort((a, b) => a - b);
 
