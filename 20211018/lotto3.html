@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자동 갱신 로또</title>
+    <style>
+      .lotto-box {
+        display: flex;
+      }
+      .lotto-num.yellow {
+        background-color: yellow;
+        color: white;
+      }
+      .lotto-num.blue {
+        background-color: blue;
+        color: white;
+      }
+      .lotto-num.red {
+        background-color: red;
+        color: white;
+      }
+      .lotto-num.grey {
+        background-color: grey;
+        color: white;
+      }
+      .lotto-num.green {
+        background-color: green;
+        color: white;
+      }
+      .lotto-num {
+        width: 18px;
+        height: 20px;
+        border: 1px solid;
+        border-radius: 50%;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>자동 로또 갱신 머신</h1>
+    <div class="lotto-box">
+      <div class="lotto-num">0</div>
+      <div class="lotto-num">0</div>
+      <div class="lotto-num">0</div>
+      <div class="lotto-num">0</div>
+      <div class="lotto-num">0</div>
+      <div class="lotto-num">0</div>
+      <div class="lotto-num">0</div>
+    </div>
+    <button onclick="makeNumList();">로또 숫자 생성</button>
+    <script>
+      let flag = true;
+
+      const makeNum = () => {
+        const randomNum = Math.floor(Math.random() * 45 + 1);
+        return randomNum;
+      };
+
+      const makeNumList = () => {
+        if (!flag) return;
+        flag = false;
+
+        const numList = [];
+
+        for (let i = 0; i <= 6; i++) {
+          let num = makeNum();
+
+          while (numList.includes(num)) {
+            num = makeNum();
+          }
+          numList.push(num);
+        }
+
+        const sortedNumbers = numList.sort((a, b) => a - b);
+
+        for (let i = 0; i <= 6; i++) {
+          const numberOne = document.getElementsByClassName("lotto-num")[i];
+
+          const randomPrint = () => {
+            numberOne.innerHTML = makeNum();
+            numberOne.classList.add(addColorClass(makeNum()));
+          };
+          const intervalId = setInterval(randomPrint, 100);
+          // setTimeout(
+          //   () => {
+          //     clearInterval(intervalId);
+          //     // numberOne.innerHTML = makeNum();
+          //     numberOne.innerHTML = sortedNumbers[i];
+          //   },
+          //   // 첫번째가 1초후에 멈추게 하려면 (i + 1) * 1000
+          //   `${i}000`
+          // );
+          const addColorClass = (number) => {
+            let colorClass;
+            if (number <= 10) {
+              colorClass = "yellow";
+            } else if (number <= 20) {
+              colorClass = "blue";
+            } else if (number <= 30) {
+              colorClass = "red";
+            } else if (number <= 40) {
+              colorClass = "grey";
+            } else if (number <= 45) {
+              colorClass = "green";
+            }
+            return colorClass;
+          };
+
+          const stopInterval = () => {
+            clearInterval(intervalId);
+            numberOne.innerHTML = sortedNumbers[i];
+
+            const colorClass = addColorClass(sortedNumbers[i]);
+            numberOne.classList.add(colorClass);
+            flag = true;
+          };
+          setTimeout(stopInterval, `${i}000`);
+        }
+      };
+    </script>
+  </body>
+</html>
