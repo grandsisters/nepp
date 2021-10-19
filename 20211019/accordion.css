@@ -1,0 +1,20 @@
+ul {
+  list-style: none;
+}
+.name-tag {
+  border: 1px solid gray;
+  width: 400px;
+  height: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+.contents {
+  border: 1px solid gray;
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+  display: none;
+}
+.items.active > .contents {
+  display: block;
+}
