@@ -1,0 +1,30 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  position: relative;
+}
+button {
+  height: 50px;
+}
+.lists {
+  list-style: none;
+  position: absolute;
+
+  top: 35px;
+  left: -40px;
+  width: 300px;
+  text-align: center;
+  visibility: hidden;
+}
+.eachList {
+  border: 1px solid white;
+  height: 30px;
+  padding-top: 10px;
+  background-color: black;
+}
+.btn.more + .lists {
+  visibility: visible;
+  z-index: 1;
+}

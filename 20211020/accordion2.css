@@ -1,0 +1,27 @@
+li {
+  list-style: none;
+}
+.items {
+  cursor: pointer;
+}
+.name-tag {
+  border: 1px solid white;
+  width: 300px;
+  height: 30px;
+  padding-top: 8px;
+  padding-left: 10px;
+}
+.contents {
+  border: 1px solid white;
+  width: 300px;
+  height: 100px;
+  padding-top: 8px;
+  padding-left: 10px;
+  display: none;
+}
+.name-tag + .contents {
+  border-top: none;
+}
+.items.more > .contents {
+  display: block;
+}
