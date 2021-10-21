@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.t-btn1 {
+  width: 300px;
+  height: 100px;
+}
+.toasted1 {
+  padding: 5px;
+  border: 1px solid cornflowerblue;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+  position: fixed;
+  right: 300px;
+  bottom: 100px;
+  opacity: 0;
+  transition: opacity 2s;
+  /* display: none; */
+}
+.t-btn2 {
+  width: 300px;
+  height: 100px;
+}
+.toasted2 {
+  padding: 5px;
+  border: 1px solid cornflowerblue;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+  position: fixed;
+  right: 300px;
+  bottom: 100px;
+  opacity: 0;
+  transition: opacity 2s;
+  /* display: none; */
+}
+.toasted1.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.toasted2.active {
+  opacity: 1;
+  z-index: 1;
+}
