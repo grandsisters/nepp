@@ -8,3 +8,16 @@ $(".items").click((e) => {
     }
   }
 });
+
+// $(".items").click((e) => {
+//   const isHead = $(e.target).hasClass("name-tag");
+//   if (!isHead) return;
+
+//   const isActive = $(e.currentTarget).hasClass("more");
+//   $(".items").removeClass("more");
+//   if (!isActive) {
+//     $(e.currentTarget).addClass("more");
+//     $(".contents").slideUp();
+//     $(".items.more .contents").slideDown();
+//   }
+// });
