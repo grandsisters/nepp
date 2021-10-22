@@ -1,0 +1,80 @@
+.fire {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  left: 800px;
+  top: 50%;
+}
+.box {
+  border: 1px solid white;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 800px;
+  top: 100px;
+  display: none;
+  z-index: 1;
+}
+.x-box {
+  border-bottom: 1px solid white;
+  height: 25px;
+}
+.press-x {
+  width: 30px;
+  right: 0px;
+  background-color: black;
+  margin-left: 265px;
+  border: none;
+  cursor: pointer;
+}
+.modal-content {
+  height: 93px;
+  width: 300px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.btn-box {
+  display: flex;
+  flex-direction: row-reverse;
+  border-top: 1px solid white;
+}
+.btn-box > button {
+  margin: 5px;
+  border: none;
+  background-color: rgb(2, 100, 180);
+  cursor: pointer;
+}
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.box2 {
+  border: 1px solid white;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 800px;
+  top: 100px;
+  display: none;
+  z-index: 1;
+}
+.thanks {
+  margin: 5px;
+  border: none;
+  background-color: rgb(2, 100, 180);
+  cursor: pointer;
+  margin-left: 225px;
+}
