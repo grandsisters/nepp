@@ -1,0 +1,29 @@
+.box {
+  position: absolute;
+  top: 130px;
+  left: 400px;
+  border: 1px solid white;
+  width: 300px;
+  height: 500px;
+  text-align: center;
+}
+.lists {
+  border-top: 1px solid white;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+.each-list {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0px;
+}
+.check-text {
+  border: 1px solid white;
+  width: 200px;
+  text-align: left;
+  /* overflow: hidden; */
+}
+.list-text {
+  width: 100%;
+  border: 1px solid white;
+}
