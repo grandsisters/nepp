@@ -3,9 +3,10 @@
   top: 130px;
   left: 400px;
   border: 1px solid white;
-  width: 300px;
+  width: 400px;
   height: 500px;
   text-align: center;
+  overflow: auto;
 }
 .lists {
   border-top: 1px solid white;
@@ -26,4 +27,7 @@
 .list-text {
   width: 100%;
   border: 1px solid white;
+}
+.each-list.active > .check-text > .list-text {
+  text-decoration: line-through;
 }
