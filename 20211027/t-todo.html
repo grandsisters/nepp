@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+      .todo-item.done .todo-content {
+        text-decoration: line-through;
+      }
+      .todo-list {
+        height: 200px;
+        overflow: auto;
+        border: 1px solid;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>TO DO LIST</h2>
+    <div class="container">
+      <div class="input-wrapper">
+        <!-- <form
+          action="https://www.google.com/search"
+          method="GET"
+          target="_blank"
+        > -->
+        <form class="form-todo">
+          <input id="input-todo" />
+          <button>추가</button>
+          <button type="button" class="btn-deleteAll">전체 삭제</button>
+        </form>
+      </div>
+      <ul class="todo-list">
+        <!-- <li class="todo-item done">
+          <label>
+            <input type="checkbox" class="input-check" checked/>
+            <span class="todo-content">${value}</span>
+          </label>
+          <button class="btn-delete">삭제</button>
+        </li> -->
+      </ul>
+    </div>
+    <script src="./t-todo.js"></script>
+    <script src="./t-event-listners.js"></script>
+  </body>
+</html>
