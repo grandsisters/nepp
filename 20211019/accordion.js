@@ -28,6 +28,7 @@
 
 $(".items").click((e) => {
   const isTitle = $(e.target).hasClass("name-tag");
+  console.log(e.target);
   if (isTitle) {
     const isActive = $(e.currentTarget).hasClass("active");
     $(".items").removeClass("active");
