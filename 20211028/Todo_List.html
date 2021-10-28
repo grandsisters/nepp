@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Todo_List.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Todo list app</h1>
+      <form class="form-add">
+        <input type="text" id="input-todo" />
+        <!-- <input type="submit" value="추가" /> -->
+        <button>추가</button>
+        <button class="deleteAll-btn">전체 삭제</button>
+      </form>
+      <ul class="lists"></ul>
+    </div>
+    <script src="./Todo_List.js"></script>
+    <script src="./event-listeners.js"></script>
+  </body>
+</html>
