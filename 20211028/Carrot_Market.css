@@ -6,6 +6,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  /* position: fixed; */
 }
 .logo-input {
   width: 500px;
@@ -148,26 +149,36 @@ input {
   background-size: cover;
 }
 .card-div {
-  /* margin-top: 100px; */
   width: 100%;
-  height: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+.card-div > h1 {
+  margin: 100px 0;
+}
+.card-div > a {
+  margin-bottom: 100px;
+  color: white;
+  text-decoration: underline;
+}
 .card-box {
   width: 1024px;
+  height: 800px;
   display: flex;
-  /* flex-wrap: wrap; */
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .card {
   width: 210px;
   height: 320px;
+  margin: 20px;
 }
 .card-img {
   width: 212px;
   height: 212px;
+  border-radius: 10px;
 }
 .card-text {
 }
