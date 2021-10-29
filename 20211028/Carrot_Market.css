@@ -147,3 +147,27 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.card-div {
+  /* margin-top: 100px; */
+  width: 100%;
+  height: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-box {
+  width: 1024px;
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.card {
+  width: 210px;
+  height: 320px;
+}
+.card-img {
+  width: 212px;
+  height: 212px;
+}
+.card-text {
+}
