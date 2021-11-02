@@ -8,7 +8,8 @@ body {
   flex-wrap: wrap; */
 
   display: grid;
-  grid-template-columns: repeat(6, 300px);
+  grid-template-columns: repeat(4, 300px);
+  gap: 20px;
   justify-content: center;
 }
 .each-article {
@@ -28,12 +29,12 @@ img {
 }
 @media only screen and (max-width: 1440px) {
   #app {
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(3, 300px);
   }
 }
 @media only screen and (max-width: 1024px) {
   #app {
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(2, 300px);
   }
 }
 @media only screen and (max-width: 768px) {
