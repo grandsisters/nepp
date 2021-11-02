@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./news2.css" />
+    <title>오늘의 뉴스</title>
+  </head>
+  <body>
+    <header>
+      <h1><img class="thumbs-up" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIKFLDxOZxEI66YI7SXQ6zV_LOH0FYxNevkRfzYPmaWRYc6chRgMNuf_CD95pC16Q0KfA&usqp=CAU" />주요 뉴스</h1>
+      <nav>
+        <ul>
+          <a href="?category=general"><li>전체</li></a>
+          <a href="?category=business"><li>경제</li></a>
+          <a href="?category=entertain"><li>연예</li></a>
+          <a href="?category=health"><li>건강</li></a>
+          <a href="?category=science"><li>과학</li></a>
+          <a href="?category=sports"><li>스포츠</li></a>
+          <a href="?category=technology"><li>기술</li></a>
+        </ul>
+        <select name="language" class="select-country">
+          <option value="kr" selected>나라별</option>
+          <option value="kr">korean</option>
+          <option value="us">america</option>
+          <option value="ru">russia</option>
+          <option value="jp">japan</option>
+        </select>
+      </nav>
+
+      <form class="form-search">
+        <input class="input-q" />
+        <button>검색</button>
+      </form>
+    </header>
+
+    <div id="app"></div>
+    <div class="pagination"></div>
+
+    <script src="./news2.js"></script>
+  </body>
+</html>
