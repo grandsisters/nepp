@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 20px;
+  justify-content: center;
+}
+@media only screen and (max-width: 1300px) {
+  .news-list {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .news-list {
+    grid-template-columns: repeat(2, 400px);
+  }
+}
+@media only screen and (max-width: 800px) {
+  .news-list {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+@media only screen and (max-width: 630px) {
+  .news-list {
+    grid-template-columns: repeat(1, 400px);
+  }
+}
+
+.news-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.img-article {
+  width: 100%;
+}
+
+header {
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+h2 {
+  margin: 0;
+}
+.page-wrapper {
+  display: flex;
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-list {
+  display: flex;
+  margin-left: 15px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.category-list li {
+  margin: 0 10px;
+}
+
+.select-country {
+  padding: 5px;
+  border-radius: 4px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  height: 30px;
+}
+.input-q {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 30px;
+}
+.btn-search {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-left: 5px;
+  height: 30px;
+}
+.form-search {
+  display: flex;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.page-list {
+  display: flex;
+}
+
+.page-item {
+  border: 2px solid #000;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.page-item.current-page {
+  background: #000;
+  color: #fff;
+}

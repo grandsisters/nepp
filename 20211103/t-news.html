@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link href="./news.css" rel="styleSheet" />
+  </head>
+  <body>
+    <header>
+      <div class="page-wrapper">
+        <nav>
+          <a href="/ajax/news.html"><h2>News</h2></a>
+          <ul class="category-list">
+            <a href="?category=general" data-link="general"><li>일반</li></a>
+            <a href="?category=business" data-link="business"><li>경제</li></a>
+            <a href="?category=entertainment" data-link="entertainment"
+              ><li>연예</li></a
+            >
+            <a href="?category=health" data-link="health"><li>건강</li></a>
+            <a href="?category=science" data-link="science"><li>과학</li></a>
+            <a href="?category=sports" data-link="sports"><li>스포츠</li></a>
+            <a href="?category=technology" data-link="technology"
+              ><li>기술</li></a
+            >
+          </ul>
+        </nav>
+        <div class="search-wrapper">
+          <select class="select-country">
+            <option value="kr">Korea</option>
+            <option value="jp">Japan</option>
+            <option value="us">US</option>
+            <option value="ca">Canada</option>
+          </select>
+          <form class="form-search">
+            <input name="category" id="input-category" type="hidden" />
+            <input name="country" id="input-country" type="hidden" />
+            <input name="q" class="input-q" placeholder="검색어를 입력하세요" />
+            <button class="btn-search">검색</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <ul class="news-list"></ul>
+
+    <div class="pagination"></div>
+
+    <script src="./news.js"></script>
+  </body>
+</html>
