@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var conn = require("./db/index");
 
 var indexRouter = require("./routes/index");
 var todoRouter = require("./routes/todo");
@@ -21,6 +22,8 @@ const liveServer = livereload.createServer({
 liveServer.watch(__dirname);
 
 var app = express();
+
+conn.connect();
 
 app.use(livereloadMiddleware());
 
