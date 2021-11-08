@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/news3.css" />
+    <title>오늘의 뉴스</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header>
+      <h1><img class="thumbs-up" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIKFLDxOZxEI66YI7SXQ6zV_LOH0FYxNevkRfzYPmaWRYc6chRgMNuf_CD95pC16Q0KfA&usqp=CAU" />주요 뉴스</h1>
+      <nav>
+        <ul class="category-list">
+          <a href="?category=general" data-link="general"><li>전체</li></a>
+          <a href="?category=business" data-link="business"><li>경제</li></a>
+          <a href="?category=health" data-link="health"><li>건강</li></a>
+          <a href="?category=science" data-link="science"><li>과학</li></a>
+          <a href="?category=sports" data-link="sports"><li>스포츠</li></a>
+          <a href="?category=technology" data-link="technology"><li>기술</li></a>
+        </ul>
+        <select class="select-country">
+          <option value="kr">korea</option>
+          <option value="us">america</option>
+          <option value="ru">russia</option>
+          <option value="jp">japan</option>
+        </select>
+      </nav>
+
+      <form class="form-search">
+        <input name="category" id="input-category" type="hidden" />
+        <input name="country" id="input-country" type="hidden" />
+        <input class="input-q" placeholder="뉴스 키워드를 입력하세요." />
+        <button>검색</button>
+      </form>
+    </header>
+
+    <div id="app">
+      <% for (let i = 0; i < articles.length; i++) {%>
+        <% const { url, urlToImage, title, description, publishedAt } = articles[i]; %>
+          <div class='each-article'>
+            <a href='<%=url%>' target='_black'
+              <article>
+                <img src='<%=urlToImage%>' />
+                <h2><%=title%></h2>
+                <p><%=description%></p>
+                <span><%=publishedAt.substr(0, 16).split("T").join(" ")%></span>
+              </article>
+            </a>
+          </div>
+      <%}%>
+    </div>
+
+    <div class="pagination">
+      <%
+      const startPage = Math.floor((page - 1) / 10) * 10 + 1;
+      const totalPage = Math.floor((totalResults - 1) / pageSize) + 1;
+      const lastPage = startPage + 9 > totalPage ? totalPage : startPage + 9;
+      %>
+    
+      <ul>
+      <%if (startPage > 1) {%>
+        <li class='page-pre'>이전</li>
+      <%}%>
+
+      <%for (let i = startPage; i <= lastPage; i++) {%>
+        <% const currentPage = i === +page ? 'current-page' : '' %>
+          <li class='page<%=currentPage%>'><%=i%></li>
+      <%}%>
+
+      <%if(page < totalPage) {%>
+        <li class='page-next'>다음</li>
+      <%}%> 
+      </ul>
+    
+    </div>
+
+    <script src="/javascripts/news3.js"></script>
   </body>
 </html>
