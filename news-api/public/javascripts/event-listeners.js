@@ -1,19 +1,19 @@
+// const { urlencoded } = require("express");
+
 $(".form-add").on("submit", (e) => {
   e.preventDefault();
   const value = $("#input-todo").val();
   if (value === "") return;
 
-  const data = { isDone: false, content: value };
-  addTodo(data);
-
-  $("#input-todo").val("");
-  $("#input-todo").focus();
-
-  const rawTodoList = localStorage.getItem("todoList") || "[]";
-  const todoList = JSON.parse(rawTodoList);
-
-  todoList.push(data);
-  saveTodoList(todoList);
+  $.ajax({
+    url: "/todo",
+    method: "POST",
+    data: { isDone: 0, content: value },
+    success: () => {
+      const todo = { isDone: false, content: value };
+      addTodo(todo);
+    },
+  });
 
   // saveTodoList()로 대체됨
   // const strTodoList = JSON.stringify(todoList);
@@ -42,13 +42,23 @@ $(".form-add").on("submit", (e) => {
 
 $(document).on("click", ".delete-btn", (e) => {
   const $todoItem = $(e.currentTarget).closest("li");
-  const index = $todoItem.index();
+  const id = $todoItem.data("id");
+  console.log(id);
+
+  $.ajax({
+    url: `/todo/${id}`,
+    method: "DELETE",
+    success: (result) => {
+      console.log(result.success);
+      $todoItem.remove();
+    },
+  });
 
   $todoItem.remove();
 
-  const todoList = JSON.parse(localStorage.todoList);
-  todoList.splice(index, 1);
-  saveTodoList(todoList);
+  // const todoList = JSON.parse(localStorage.todoList);
+  // todoList.splice(index, 1);
+  // saveTodoList(todoList);
 
   // saveTodoList()로 대체됨
   // localStorage.setItem("todoList", JSON.stringify(todoList));
@@ -71,9 +81,14 @@ $(document).on("change", ".input-check", (e) => {
 });
 
 $(".deleteAll-btn").click(() => {
-  $("ul").empty();
-  saveTodoList([]);
-  // localStorage.todoList = "[]";
+  $.ajax({
+    url: `/todo/`,
+    method: "DELETE",
+    success: (result) => {
+      console.log(result.success);
+      $("ul").empty();
+    },
+  });
 });
 
 $(document).on("click", ".edit-btn", (e) => {

@@ -19,7 +19,8 @@
       </form>
       <ul class="lists">
         <%todos.forEach((todo)=>{%>
-          <li class="each-list <%=todo.isDone ? "active" : ""%>">
+          <li class="each-list <%=todo.isDone ? "active" : ""%>"
+            data-id='<%=todo.id%>'>
             <label class="check-text" for="delete-btn">
             <input type="checkbox" class="input-check" <%=todo.isDone ? "checked" : ""%>/>
             <span class="list-text"><%=todo.content%></span> </label>
