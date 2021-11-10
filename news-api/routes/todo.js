@@ -13,19 +13,22 @@ router.get("/", function (req, res, next) {
 
 router.post("/", (req, res) => {
   // TODO 생성
-  console.log(req.body);
+  // console.log(req.body);
   const { isDone, content } = req.body;
-  const query = `INSERT INTO todos(isDone, content) VALUES(${isDone}, '${content}')`;
+  const query = `INSERT INTO todos(isDone, content) VALUES(${isDone}, '${content}');`;
 
   conn.query(query, (err, result) => {
     if (err) {
       console.error(err);
       return res.send({ success: false });
     } else {
-      res.send({ success: true });
+      const id = result.insertId;
+      console.log(result);
+      res.send({ success: true, id: id });
     }
   });
 });
+
 // router.get("/:id", (req, res) => {
 //   // TODO 생성 (특정 id를 받아와서 수정 하고 싶을때)
 // });
@@ -34,9 +37,45 @@ router.post("/", (req, res) => {
 //   // TODO 수정
 // });
 
-// router.patch("/:id", (req, res) => {
-//   // TODO 일부 수정
-// });
+router.patch("/:id/isDone", (req, res) => {
+  // TODO 일부 수정
+  const { id } = req.params;
+  const { isDone } = req.body;
+  const query = `
+  UPDATE todos 
+  SET isDone = ${isDone}
+  WHERE id = ${id};
+  `;
+
+  conn.query(query, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.send({ success: false });
+    } else {
+      res.send({ success: true });
+    }
+  });
+});
+
+router.patch("/:id/content", (req, res) => {
+  // TODO 일부 수정
+  const { id } = req.params;
+  const { content } = req.body;
+  const query = `
+  UPDATE todos 
+  SET content = '${content}'
+  WHERE id = ${id};
+  `;
+
+  conn.query(query, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.send({ success: false });
+    } else {
+      res.send({ success: true });
+    }
+  });
+});
 
 router.delete("/:id", (req, res) => {
   // TODO 삭제
