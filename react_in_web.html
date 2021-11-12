@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 리액트 라이브러리  -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- 바벨 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>html에서 리액트 사용해보기</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const MyComponent = ({ children }) => <h5>{children}</h5>; // return 과 중괄호 생략됨
+      const App = () => {
+        // return 과 중괄호 생략가능
+        return (
+          <React.Fragment>
+            <h1>hi</h1>
+            <MyComponent> react is good</MyComponent>
+          </React.Fragment>
+        );
+      };
+
+      // ReactDOM.render(<h1>HI React</h1>, document.getElementById("root"));
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
