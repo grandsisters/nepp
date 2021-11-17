@@ -10,6 +10,7 @@ const IterationSample = () => {
     { id: 4, text: "바람" },
   ]);
   const [text, setText] = useState("");
+  let [nextID, setNextID] = useState(5);
 
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -17,9 +18,14 @@ const IterationSample = () => {
   };
 
   const handleClick = () => {
-    setArray([...array, { id: 0, text: text }]);
+    setArray([...array, { id: nextID, text: text }]);
     setText("");
     console.log(array);
+    setNextID((nextID += 1));
+  };
+  const handleDelete = (id) => {
+    const newArr = array.filter((e) => e.id !== id);
+    setArray(newArr);
   };
 
   return (
@@ -29,7 +35,9 @@ const IterationSample = () => {
 
       <ul>
         {array.map((e, i) => (
-          <li key={i}>{e.text} 입니다.</li>
+          <li key={i} onDoubleClick={() => handleDelete(e.id)}>
+            {e.text} 입니다.
+          </li>
         ))}
       </ul>
     </>
