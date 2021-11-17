@@ -1,7 +1,9 @@
 // import Counter from "./components/Counter";
 // import EventPractice from "./components/EventPractice";
-import IterationSample from "./components/IterationSample";
+// import IterationSample from "./components/IterationSample";
 // import Test2 from "./components/Test2";
+
+import BendingMachine from "./components/BendingMachine";
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
       {/* <Say2 /> */}
       {/* <EventPractice /> */}
       {/* <Test2 /> */}
-      <IterationSample />
+      {/* <IterationSample /> */}
+      <BendingMachine />
     </>
   );
 }
