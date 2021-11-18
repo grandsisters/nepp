@@ -2,8 +2,8 @@
 // import EventPractice from "./components/EventPractice";
 // import IterationSample from "./components/IterationSample";
 // import Test2 from "./components/Test2";
-
-import BendingMachine from "./components/BendingMachine";
+// import BendingMachine from "./components/BendingMachine";
+import Sort from "./components/Sort";
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
       {/* <EventPractice /> */}
       {/* <Test2 /> */}
       {/* <IterationSample /> */}
-      <BendingMachine />
+      {/* <BendingMachine /> */}
+      <Sort />
     </>
   );
 }
