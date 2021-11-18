@@ -7,13 +7,13 @@ const BendingMachine = () => {
 
   const coins = [100, 500, 1000, 5000, 10000];
 
-  const eats = [
+  const [eats, setEats] = useState([
     { id: 1, name: "물", coin: 100 },
     { id: 2, name: "커피", coin: 500 },
     { id: 3, name: "음료수", coin: 1000 },
     { id: 4, name: "좀 비싼 음료수", coin: 5000 },
     { id: 5, name: "많이 비싼 음료수", coin: 10000 },
-  ];
+  ]);
 
   const moneyUp = (coin) => {
     setMoney(money + coin);
@@ -30,23 +30,35 @@ const BendingMachine = () => {
     setCart(zero);
   };
   const order = () => {
-    setCart(zero);
+    if (!window.confirm("구매하시겠습니까?")) return;
+    if (money < cart) return alert("잔액이 부족합니다");
     setMoney(money - cart);
+    setCart(zero);
+  };
+  const handleDelete = (id) => {
+    const newEats = eats.filter((e) => e.id !== id);
+    setEats(newEats);
   };
   return (
     <>
       <ul>
         {coins.map((coin) => (
-          <li key={coin} onClick={() => moneyUp(coin)}>
+          <button key={coin} onClick={() => moneyUp(coin)}>
             {coin} 원
-          </li>
+          </button>
         ))}
       </ul>
       <ul>
         {eats.map(({ id, name, coin }) => (
-          <li key={id} onClick={() => myCart(coin)}>
-            {name} : {coin}원
-          </li>
+          <>
+            <li>
+              {name} : {coin}원
+            </li>
+            <button key={id} onClick={() => myCart(coin)}>
+              담기
+            </button>
+            <button onDoubleClick={() => handleDelete(id)}>삭제</button>
+          </>
         ))}
       </ul>
 
