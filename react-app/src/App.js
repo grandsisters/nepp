@@ -8,10 +8,11 @@
 // import Counters2 from "./components/Counters2";
 // import Info from "./components/Info";
 // import { useState } from "react";
-
-import TodoComponent from "./components/Todo";
-
+// import Axios from "./components/Axios";
+// import TodoComponent from "./components/Todo";
 // import StyledComponents from "./components/StyledComponents";
+
+import NewsList from "./components/news/NewsList";
 
 function App() {
   // const [visible, setVisible] = useState(false);
@@ -30,7 +31,9 @@ function App() {
       {visible && <Info />} */}
       {/* <Average /> */}
       {/* <StyledComponents /> */}
-      <TodoComponent />
+      {/* <TodoComponent /> */}
+      {/* <Axios /> */}
+      <NewsList />
     </>
   );
 }
