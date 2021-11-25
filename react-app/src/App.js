@@ -11,8 +11,7 @@
 // import Axios from "./components/Axios";
 // import TodoComponent from "./components/Todo";
 // import StyledComponents from "./components/StyledComponents";
-
-import NewsList from "./components/news/NewsList";
+import News from "./components/news/News";
 
 function App() {
   // const [visible, setVisible] = useState(false);
@@ -33,7 +32,7 @@ function App() {
       {/* <StyledComponents /> */}
       {/* <TodoComponent /> */}
       {/* <Axios /> */}
-      <NewsList />
+      <News />
     </>
   );
 }
