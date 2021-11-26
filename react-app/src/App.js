@@ -13,7 +13,9 @@
 // import StyledComponents from "./components/StyledComponents";
 // import News from "./components/news/News";
 
-import Bootstrap from "./components/bootstrap/Bootstrap";
+import TodoComponent2 from "./components/todo/Todo2";
+
+// import Bootstrap from "./components/bootstrap/Bootstrap";
 
 function App() {
   // const [visible, setVisible] = useState(false);
@@ -35,7 +37,8 @@ function App() {
       {/* <TodoComponent /> */}
       {/* <Axios /> */}
       {/* <News /> */}
-      <Bootstrap />
+      {/* <Bootstrap /> */}
+      <TodoComponent2 />
     </>
   );
 }
