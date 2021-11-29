@@ -1,18 +1,26 @@
-import Accordian from "./Accordian";
+// import Accordian from "./Accordian";
 import React, { useState } from "react";
+import Accordian2 from "./Accordian2";
+import Carousel from "./Carousel";
 
-const accordianData = [
-  { id: 1, title: "Title1", content: "asdsdsadawdasdawdasdawd", active: false },
-  { id: 2, title: "Title2", content: "asdsdsadawdasdawdasdawd", active: false },
-  { id: 3, title: "Title3", content: "asdsdsadawdasdawdasdawd", active: false },
-  { id: 4, title: "Title4", content: "asdsdsadawdasdawdasdawd", active: false },
-];
+// const accordianData = [
+//   { id: 1, title: "Title1", content: "asdsdsadawdasdawdasdawd", active: false },
+//   { id: 2, title: "Title2", content: "asdsdsadawdasdawdasdawd", active: false },
+//   { id: 3, title: "Title3", content: "asdsdsadawdasdawdasdawd", active: false },
+//   { id: 4, title: "Title4", content: "asdsdsadawdasdawdasdawd", active: false },
+// ];
+
 const Bootstrap = () => {
-  const [data, setData] = useState(accordianData);
+  // const [data, setData] = useState(accordianData);
   return (
-    <div style={{ margin: 20, width: 800 }}>
-      <Accordian data={data} onChange={setData} />
-    </div>
+    //   <div style={{ margin: 20, width: 800 }}>
+    //     <Accordian data={data} onChange={setData} />
+    //   </div>
+    // );
+    <>
+      <Carousel />
+      <Accordian2 />
+    </>
   );
 };
 
