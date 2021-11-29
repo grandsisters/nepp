@@ -13,9 +13,11 @@
 // import StyledComponents from "./components/StyledComponents";
 // import News from "./components/news/News";
 
-import TodoComponent2 from "./components/todo/Todo2";
+// import Carousel from "./components/bootstrap/Carousel";
 
-// import Bootstrap from "./components/bootstrap/Bootstrap";
+// import TodoComponent2 from "./components/todo/Todo2";
+
+import Bootstrap from "./components/bootstrap/Bootstrap";
 
 function App() {
   // const [visible, setVisible] = useState(false);
@@ -37,8 +39,9 @@ function App() {
       {/* <TodoComponent /> */}
       {/* <Axios /> */}
       {/* <News /> */}
-      {/* <Bootstrap /> */}
-      <TodoComponent2 />
+      <Bootstrap />
+      {/* <TodoComponent2 /> */}
+      {/* <Carousel /> */}
     </>
   );
 }
