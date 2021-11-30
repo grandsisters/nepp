@@ -1,4 +1,5 @@
 // import Accordian from "./Accordian";
+import Dropdown from "./Dropdown";
 import React, { useState } from "react";
 import Accordian2 from "./Accordian2";
 import Carousel from "./Carousel";
@@ -18,6 +19,7 @@ const Bootstrap = () => {
     //   </div>
     // );
     <>
+      <Dropdown />
       <Carousel />
       <Accordian2 />
     </>
