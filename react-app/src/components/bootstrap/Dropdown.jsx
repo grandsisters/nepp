@@ -1,23 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled, { css } from "styled-components";
+
+const menuList = [
+  { name: "youtube 프리미엄", link: "https://www.youtube.com/" },
+  { name: "youtube 프리미엄", link: "https://www.youtube.com/" },
+  { name: "youtube 프리미엄", link: "https://www.youtube.com/" },
+  { name: "youtube 프리미엄", link: "https://www.youtube.com/" },
+];
 
 const Dropdown = () => {
   const [active, setActive] = useState(false);
+  const dropdownEl = useRef(null);
 
-  const handleClick = () => {
-    const newActive = !active;
-    setActive(newActive);
-  };
+  const handleClick = useCallback(() => {
+    // const newActive = !active;
+    // setActive(newActive);
+    setActive(!active);
+  }, [active]);
+
+  useEffect(
+    (e) => {
+      const handleClick = () => {
+        if (dropdownEl.current && !dropdownEl.current.contains(e.current.target)) {
+          setActive(false);
+        }
+      };
+      document.body.addEventListener("click", handleClick);
+      return () => {
+        document.body.removeEventListener("click", handleClick);
+      };
+    },
+    [dropdownEl]
+  );
 
   return (
-    <Wrapper>
+    <Wrapper ref={dropdownEl}>
       <Button onClick={handleClick}>인사 버튼</Button>
       {active && (
         <Menu>
-          <Item>하이</Item>
-          <Item>안녕</Item>
-          <Item>구텐탁</Item>
-          <Item>곤니찌와</Item>
+          {menuList.map((e) => (
+            <a href={e.link} target="_blank" rel="noreferrer" key={e.name}>
+              <Item>e.name</Item>
+            </a>
+          ))}
         </Menu>
       )}
     </Wrapper>
