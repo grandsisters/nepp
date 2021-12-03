@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 // import Accordian2 from "./Accordian2";
 // import Carousel from "./Carousel";
-import Carousel2 from "./Carousel2";
+// import Carousel2 from "./Carousel2";
+import Modal from "./Modal";
 
 // const accordianData = [
 //   { id: 1, title: "Title1", content: "asdsdsadawdasdawdasdawd", active: false },
@@ -30,7 +31,8 @@ const Bootstrap = () => {
       {/* <Dropdown />
       <Carousel />
       <Accordian2 /> */}
-      <Carousel2 data={imageList} />
+      {/* <Carousel2 data={imageList} /> */}
+      {<Modal />}
     </>
   );
 };
