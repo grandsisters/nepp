@@ -4,7 +4,11 @@ import styled, { keyframes } from "styled-components";
 const Modal = () => {
   const [activeModal, setActiveModal] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [name, setName] = useState("");
 
+  const anotherWorld = () => {
+    setActiveModal(true);
+  };
   const handleNo = () => {
     setFadeOut(true);
 
@@ -13,29 +17,34 @@ const Modal = () => {
       setFadeOut(false);
     }, 300);
   };
-  const anotherWorld = () => {
-    setActiveModal(true);
+  const handleYes = () => {
+    setFadeOut(true);
+
+    setTimeout(() => {
+      setActiveModal(false);
+      setFadeOut(false);
+    }, 300);
   };
 
   return (
     <>
       <ModalFire onClick={anotherWorld}>모달 커몬</ModalFire>
+      <p>이름:{name}</p>
       {activeModal && (
-        <BackDrop onClick={handleNo}>
+        <>
+          <BackDrop onClick={handleNo} />
           <Container fadeOut={fadeOut}>
             <HeadLine>
               <Title>이세계로 전생</Title>
               <XBtn onClick={handleNo}>X</XBtn>
             </HeadLine>
-            <Content>계속하시겠습니까?</Content>
-            <YesBtn>
-              <a href="https://www.naver.com" target="_blank" rel="noreferrer">
-                예
-              </a>
-            </YesBtn>
+            <Content>
+              <input onChange={(e) => setName(e.target.value)} type="text" placeholder="이름을 입력하십시오." />
+            </Content>
+            <YesBtn onClick={handleYes}>예</YesBtn>
             <NoBtn onClick={handleNo}>아니오</NoBtn>
           </Container>
-        </BackDrop>
+        </>
       )}
     </>
   );
@@ -61,7 +70,6 @@ const BackDrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
 `;
 
 const ModalSlide = keyframes`
@@ -81,11 +89,17 @@ const Container = styled.div`
   border-radius: 4px;
   border: 1px solid white;
   position: fixed;
-  z-index: 100;
+  z-index: 1;
   top: 5%;
   left: 50%;
   transform: ${({ fadeOut }) => (fadeOut ? "translate(-50%, -30px)" : "translateX(-50%)")};
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+  input {
+    border: none;
+    width: 100%;
+    background: black;
+  }
 `;
 
 const HeadLine = styled.div`
