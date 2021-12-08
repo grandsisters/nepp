@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import ModalSideBar from "./ModalSibeBar";
+import ModalSidebar from "./ModalSidebar";
 import Topbar from "./Topbar";
 
 const Youtube = () => {
-  const [activeSide, setActiveSide] = useState(false);
-  const handleSideBar = () => {
-    setActiveSide(!activeSide);
-  };
-  const sideFalse = () => setActiveSide(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const openSidebar = () => setShowSidebar(true);
+  const hideSidebar = () => setShowSidebar(false);
+
   return (
     <div>
-      <Topbar />
-      <button onClick={handleSideBar}>sidebar</button>
-      {activeSide && <ModalSideBar onClose={sideFalse} />}
+      <Topbar onOpenSidebar={openSidebar} />
+      {showSidebar && <ModalSidebar onClose={hideSidebar} />}
     </div>
   );
 };
