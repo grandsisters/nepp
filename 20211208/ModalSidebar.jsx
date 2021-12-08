@@ -1,6 +1,20 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Backdrop from "../bootstrap/backdrop";
+import DropdownProfileMenu from "./DropdownProfileMenu";
+
+const firstMenuData = [
+  {
+    image:
+      "https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-06-256.png",
+    name: "디자인: 기기테마",
+  },
+  {
+    image:
+      "https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-06-256.png",
+    name: "디자인: 기기테마",
+  },
+];
 
 const ModalSidebar = ({ onClose }) => {
   const [collapse, setCollapse] = useState(false);
@@ -11,7 +25,9 @@ const ModalSidebar = ({ onClose }) => {
 
   return (
     <>
-      <Sidebar collapse={collapse}>asdf</Sidebar>
+      <Sidebar collapse={collapse}>
+        <DropdownProfileMenu data={firstMenuData} />
+      </Sidebar>
       <Backdrop collapse={collapse} onClick={handleClose} />
     </>
   );
