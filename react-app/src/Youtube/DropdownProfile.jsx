@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import DropdownProfileMenu from "./DropdownProfileMenu";
+import Menu from "./Menu";
 import { firstMenuData, secondMenuData } from "../data/menu";
 import { useDropdownClickBody } from "../Hooks/index";
 
@@ -18,8 +18,8 @@ const DropdownProfile = ({ onClose }) => {
           <LinkAccountSetting>Google 계정 관리</LinkAccountSetting>
         </TopRight>
       </Top>
-      <DropdownProfileMenu data={firstMenuData} />
-      <DropdownProfileMenu data={secondMenuData} />
+      <Menu data={firstMenuData} />
+      <Menu data={secondMenuData} />
     </Container>
   );
 };
@@ -35,6 +35,7 @@ const Container = styled.div`
 const Top = styled.div`
   display: flex;
   padding: 16px;
+  border-bottom: 1px solid #ddd;
 `;
 const TopLeft = styled.div``;
 const ImgProfile = styled.img`

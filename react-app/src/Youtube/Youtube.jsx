@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ModalSidebar from "./ModalSidebar";
 import Topbar from "./Topbar";
+import VideoList from "./VideoList";
 
 const Youtube = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -11,6 +12,7 @@ const Youtube = () => {
     <div>
       <Topbar onOpenSidebar={openSidebar} />
       {showSidebar && <ModalSidebar onClose={hideSidebar} />}
+      <VideoList />
     </div>
   );
 };
