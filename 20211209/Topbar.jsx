@@ -1,33 +1,25 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import DropdownProfile from "./DropdownProfile";
-import imgHamburger from "../../assets/images/hamburger.png";
-import imgLogo from "../../assets/images/logo.png";
+import imgHamburger from "../assets/images/hamburger.png";
+import imgLogo from "../assets/images/logo.png";
 
 const Topbar = ({ onOpenSidebar }) => {
   const [showDropdownProfile, setShowDropdownProfile] = useState(false);
   return (
     <>
       <Container>
-        <ImgHamburger
-          onClick={onOpenSidebar}
-          src={imgHamburger}
-          alt="hamburger"
-        />
+        <ImgHamburger onClick={onOpenSidebar} src={imgHamburger} alt="hamburger" />
         <ImgLogo src={imgLogo} alt="logo" />
         <SearchWrapper>
           <InputSearch placeholder="검색" />
           <BtnSearch>검색</BtnSearch>
         </SearchWrapper>
         <DropdownWrapper>
-          <BtnProfile
-            onClick={() => setShowDropdownProfile(!showDropdownProfile)}
-          >
+          <BtnProfile onClick={() => setShowDropdownProfile(!showDropdownProfile)}>
             <ImgProfile src="https://yt3.ggpht.com/3SshyAt2hdIsA4v1VpRKwmvCSr8Uw0k0HQyERY899L_vAL86hddK3XFOEgEee1rRk0O-Y0qVJw=s88-c-k-c0x00ffffff-no-rj-mo" />
           </BtnProfile>
-          {showDropdownProfile && (
-            <DropdownProfile onClose={() => setShowDropdownProfile(false)} />
-          )}
+          {showDropdownProfile && <DropdownProfile onClose={() => setShowDropdownProfile(false)} />}
         </DropdownWrapper>
       </Container>
     </>

@@ -3,17 +3,10 @@ import styled, { keyframes } from "styled-components";
 import Backdrop from "../bootstrap/backdrop";
 import Menu from "./Menu";
 
-import imgLogo from "../../assets/images/logo.png";
-import imgHamburger from "../../assets/images/hamburger.png";
+import imgLogo from "../assets/images/logo.png";
+import imgHamburger from "../assets/images/hamburger.png";
 
-import {
-  sidebarMenuData1,
-  sidebarMenuData2,
-  sidebarMenuMoreData2,
-  sidebarMenuData3,
-  sidebarMenuData4,
-  sidebarMenuData5,
-} from "../../data/menu";
+// import { sidebarMenuData1, sidebarMenuData2, sidebarMenuMoreData2, sidebarMenuData3, sidebarMenuData4, sidebarMenuData5 } from "../data/menu";
 
 const ModalSidebar = ({ onClose }) => {
   const [collapse, setCollapse] = useState(false);
@@ -26,11 +19,7 @@ const ModalSidebar = ({ onClose }) => {
     <>
       <Sidebar collapse={collapse}>
         <Top>
-          <ImgHamburger
-            onClick={handleClose}
-            src={imgHamburger}
-            alt="hamburger"
-          />
+          <ImgHamburger onClick={handleClose} src={imgHamburger} alt="hamburger" />
           <ImgLogo src={imgLogo} alt="logo" />
         </Top>
         <Bottom>
