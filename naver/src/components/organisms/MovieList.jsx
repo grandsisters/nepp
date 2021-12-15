@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const MovieList = ({ data }) => {
-  console.log(data);
   return (
     <List>
       {data.map((e) => (
@@ -24,6 +23,7 @@ const MovieList = ({ data }) => {
 const List = styled.div`
 display: grid
 grid-template-columns: 1fr 1fr;
+grid-gap:10px;
 `;
 
 const Item = styled.div``;
