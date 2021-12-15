@@ -28,6 +28,7 @@ const Book = () => {
 
 const Form = styled.form`
   display: flex;
+  padding: 10px;
 `;
 
 const InputQuery = styled.input`
