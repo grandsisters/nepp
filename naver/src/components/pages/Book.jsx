@@ -17,6 +17,7 @@ const Book = () => {
 
   return (
     <div>
+      <h2>책 검색</h2>
       <Form onSubmit={handleSubmit}>
         <InputQuery onChange={(e) => setQuery(e.target.value)} placeholder="검색어를 입력하세요" />
         <button>검색</button>
