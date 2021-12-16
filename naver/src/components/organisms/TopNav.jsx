@@ -1,21 +1,26 @@
 import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled, { css } from "styled-components";
+import { Link, useLocation } from "react-router-dom";
+
+const linkList = [
+  { link: "/", name: "메인" },
+  { link: "/Movie", name: "영화" },
+  { link: "/Book", name: "책" },
+];
 
 const TopNav = () => {
+  let { pathname } = useLocation();
+  if (pathname === "/") return <></>;
+
   return (
     <Container>
       <Nav>
         <LinkList>
-          <Link to="/">
-            <LinkItem>메인</LinkItem>
-          </Link>
-          <Link to="/Movie">
-            <LinkItem>영화</LinkItem>
-          </Link>
-          <Link to="/Book">
-            <LinkItem>책</LinkItem>
-          </Link>
+          {linkList.map((e) => (
+            <Link to={e.link}>
+              <LinkItem active={pathname === e.link}>{e.name}</LinkItem>
+            </Link>
+          ))}
         </LinkList>
       </Nav>
     </Container>
@@ -42,6 +47,13 @@ const LinkList = styled.ul`
 
 const LinkItem = styled.li`
   margin: 0 10px;
+  ${(props) =>
+    props.active &&
+    css`
+      background: black;
+      color: white;
+      padding: 5px;
+    `}
 `;
 
 export default TopNav;
