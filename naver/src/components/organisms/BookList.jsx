@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const BookList = ({ data }) => {
   console.log(data);
@@ -8,7 +9,10 @@ const BookList = ({ data }) => {
       {data.map((e) => (
         <a href={e.link} target={"_blank"} rel="noreferrer" key={e.link}>
           <Item>
-            <Image src={e.image} />
+            <Link to={`/book/${e.isbn.split(" ")[1]}`}>
+              <Image src={e.image} />
+            </Link>
+
             {/* <Title>{e.title}</Title> */}
             {/* b태그를 없앨수있지만 해킹 위험이 있음 */}
             <Title dangerouslySetInnerHTML={{ __html: e.title }} />
