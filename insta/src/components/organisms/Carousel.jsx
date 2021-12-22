@@ -14,9 +14,8 @@ const Carousel = () => {
 
   useEffect(() => {
     const changeActiveIndex = () => {
-      if (activeIndex === CarouselData.length - 1) return setActiveIndex(0);
+      const nextIndex = activeIndex === CarouselData.length - 1 ? 0 : activeIndex + 1;
 
-      const nextIndex = activeIndex + 1;
       setActiveIndex(nextIndex);
     };
     setInterval(changeActiveIndex, 6000);
@@ -29,7 +28,7 @@ const Carousel = () => {
     <Wrapper>
       <BG src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
       {CarouselData.map((e, i) => (
-        <Image key={i} src={e} active={i === activeIndex} />
+        <Image key={e} src={e} active={i === activeIndex} />
       ))}
     </Wrapper>
   );
@@ -51,13 +50,13 @@ const Image = styled.img`
   top: 96px;
   left: 148px;
   opacity: 0;
-  transition: opacity 3s ease-in;
+  transition: opacity 2s ease-in;
 
   ${(props) =>
     props.active &&
     css`
       opacity: 1;
-      transition: opacity 3s ease-out;
+      transition: opacity 2s ease-out;
     `};
 `;
 
