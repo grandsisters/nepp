@@ -1,19 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { AlsoDiv } from "../molecules";
+import { signup } from "../../apis/user";
 
 const Signup_MB = () => {
+  const [signupData, setSignupData] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const newData = { ...signupData, [name]: value };
+    setSignupData(newData);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { user_name, password, password_confirm } = signupData;
+    if (user_name.length < 4) {
+      return alert("아이디가 너무 짧습니다.");
+    }
+
+    if (password !== password_confirm) {
+      return alert("비밀번호를 확인해주세요.");
+    }
+
+    signup(signupData);
+  };
+
   return (
     <MainBlock>
       <Logo src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
-      <SignupForm>
+      <SignupForm onSubmit={handleSubmit}>
         <p>친구들의 사진과 동영상을 보려면 가입하세요.</p>
         <FacebookLoginBtn>Facebook으로 로그인</FacebookLoginBtn>
         <AlsoDiv />
-        <PhoneNumberInput placeholder="휴대폰 번호 또는 이메일 주소" />
-        <NameInput placeholder="성명" />
-        <IdInput placeholder="사용자 이름" />
-        <PwInput placeholder="비밀번호" />
+        <NameInput placeholder="성명" name="name" onChange={handleChange} required />
+        <IdInput placeholder="사용자 이름" name="user_name" onChange={handleChange} required />
+        <PwInput placeholder="비밀번호" type="password" name="password" onChange={handleChange} required />
+        <PwConfirm placeholder="비밀번호 확인" type="password" name="password_confirm" onChange={handleChange} required />
         <SignupBtn>가입</SignupBtn>
       </SignupForm>
     </MainBlock>
@@ -29,7 +53,7 @@ const MainBlock = styled.div`
   align-items: center;
 `;
 
-const SignupForm = styled.div`
+const SignupForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +85,7 @@ const FacebookLoginBtn = styled.button`
   color: white;
 `;
 
-const PhoneNumberInput = styled(Input)``;
+const PwConfirm = styled(Input)``;
 
 const NameInput = styled(Input)``;
 
