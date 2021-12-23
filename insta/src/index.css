@@ -22,3 +22,7 @@ ul {
   padding: none;
   list-style: none;
 }
+
+button:hover {
+  cursor: pointer;
+}
