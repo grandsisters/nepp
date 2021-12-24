@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import { ImgHome, Direct, New, Find, Activity } from "../../assets/images";
+import { ImgHome, Message, New, Find, Activity } from "../../assets/images";
 
 const TopNav = () => {
   const [dropdownActive, setDropdownActive] = useState(false);
@@ -23,7 +23,7 @@ const TopNav = () => {
         </Nav>
         <NavMenu>
           <ImgHome />
-          <Direct />
+          <Message />
           <New />
           <Find />
           <Activity />
