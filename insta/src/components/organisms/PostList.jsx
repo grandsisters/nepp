@@ -5,35 +5,50 @@ import { Activity, Message, Comment, Bookmark, Emoticon, ETC } from "../../asset
 const PostList = ({ data }) => {
   return (
     <>
-      <PostListWrapper>
-        <Tag>
-          <Author>
-            <Img src="" />
-            <ID></ID>
-          </Author>
-          <ETC />
-        </Tag>
-        <Post></Post>
-        <Menu>
-          <Activity />
-          <Comment />
-          <Message />
-          <ImgIndexWrapper>
-            <ImageIndex />
-          </ImgIndexWrapper>
-          <Bookmark />
-        </Menu>
-        <NumberOfLike></NumberOfLike>
-        <AuthorComments>asdasdasdasdasd</AuthorComments>
-        <More>더 보기</More>
-        <MoreComments>댓글 모두 보기</MoreComments>
-        <Date></Date>
-        <WriteComment>
-          <Emoticon />
-          <CommentInput placeholder="댓글 달기..." />
-          <UploadComment>게시</UploadComment>
-        </WriteComment>
-      </PostListWrapper>
+      {data.map(({ id, created_at, content, user, imageList, likes, replys }) => (
+        <PostListWrapper key={id}>
+          <Tag>
+            <Author>
+              <Img src={user.profileImage} />
+              <ID>{user.name}</ID>
+            </Author>
+            <ETC />
+          </Tag>
+          {imageList.map((f) => (
+            <Post key={f.id} src={f.image} />
+          ))}
+          {/* <Post src={imageList.image} /> */}
+          <BottomWrapper>
+            <Menu>
+              <ACM>
+                <Activity />
+                <Comment />
+                <Message />
+              </ACM>
+              <ImgIndexWrapper>
+                <ImageIndex />
+              </ImgIndexWrapper>
+              <Bookmark />
+            </Menu>
+            <Comments>
+              <NumberOfLike>좋아요 {likes.total}개</NumberOfLike>
+              <AuthorWrapper>
+                <ID>{user.name}</ID>
+                <AuthorComments>{content}</AuthorComments>
+                <More>더 보기</More>
+              </AuthorWrapper>
+              <MoreComments>댓글 {replys.total}개 모두 보기</MoreComments>
+              <ReplyCommnet></ReplyCommnet>
+              <Date>{created_at}</Date>
+            </Comments>
+          </BottomWrapper>
+          <WriteComment>
+            <Emoticon />
+            <CommentInput rows={1} placeholder="댓글 달기..." />
+            <UploadComment>게시</UploadComment>
+          </WriteComment>
+        </PostListWrapper>
+      ))}
     </>
   );
 };
@@ -44,40 +59,113 @@ const PostListWrapper = styled.div`
   margin-top: 30px;
 `;
 
-const Tag = styled.div``;
+const Tag = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+`;
 
-const Author = styled.div``;
+const Author = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-const Img = styled.img``;
+const Img = styled.img`
+  width: 32px;
+  height: 32px;
+  border-radius: 25px;
+  margin-right: 12px;
+`;
 
-const ID = styled.span``;
+const ID = styled.span`
+  font-weight: bold;
+`;
 
-const Post = styled.img``;
+const Post = styled.img`
+  width: 100%;
+`;
 
-const Menu = styled.div``;
+const BottomWrapper = styled.div`
+  padding: 5px;
+`;
+
+const Menu = styled.div`
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ACM = styled.div`
+  & > * {
+    margin-right: 12px;
+  }
+`;
 
 const ImgIndexWrapper = styled.div``;
 
 const ImageIndex = styled.img``;
 
-const NumberOfLike = styled.p``;
+const NumberOfLike = styled.p`
+  font-weight: bold;
+  margin: 5px 0;
+`;
 
-const AuthorComments = styled.span``;
+const Comments = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  & > * {
+    padding-bottom: 5px;
+  }
+`;
+
+const AuthorWrapper = styled.div`
+  display: flex;
+`;
+
+const AuthorComments = styled.span`
+  margin: 0px 5px 0;
+`;
 
 const More = styled.span`
   cursor: pointer;
 `;
 
-const MoreComments = styled.p`
+const MoreComments = styled.span`
   cursor: pointer;
 `;
 
-const Date = styled.span``;
+const ReplyCommnet = styled.span``;
 
-const WriteComment = styled.div``;
+const Date = styled.span`
+  font-size: 12px;
+`;
 
-const CommentInput = styled.input``;
+const WriteComment = styled.form`
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #dbdbdb;
+`;
 
-const UploadComment = styled.button``;
+const CommentInput = styled.textarea`
+  padding-left: 10px;
+  flex: 1;
+  border: none;
+  background: none;
+  resize: none;
+  overflow: hidden;
+`;
+
+const UploadComment = styled.button`
+  border: none;
+  color: rgb(54, 172, 250);
+  font-weight: bold;
+  font-size: 15px;
+  background: none;
+`;
 
 export default PostList;
