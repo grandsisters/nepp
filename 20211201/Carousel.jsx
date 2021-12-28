@@ -41,11 +41,7 @@ const Carousel = ({ data }) => {
       <BtnRight onClick={() => handleIndex(1)}>다음</BtnRight>
       <IndexList>
         {data.map((image, index) => (
-          <BtnIndex
-            active={activeIndex === index}
-            key={image}
-            onClick={() => setActiveIndex(index)}
-          >
+          <BtnIndex active={activeIndex === index} key={image} onClick={() => setActiveIndex(index)}>
             {index + 1}
           </BtnIndex>
         ))}
@@ -73,7 +69,6 @@ const Image = styled.img`
   /* position: absolute;
   top: 0;
   left: 0; */
-  /* display: ${({ active }) => !active && "none"}; */
   /* opacity: ${({ active }) => !active && "0"}; */
   /* transition: opacity 0.5s ease-in; */
 `;
