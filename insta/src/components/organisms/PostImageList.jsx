@@ -15,14 +15,19 @@ const PostImageList = ({ data }) => {
   // };
 
   const handleIndex = (n) => {
-    setActiveIndex(() => activeIndex + n);
+    setActiveIndex((prev) => prev + n);
   };
 
   return (
     <Wrapper>
-      <PostList>
+      {/* <PostList>
         {data.map((e, i) => (
           <Post key={e.id} src={e.image} active={activeIndex === i} />
+        ))}
+      </PostList> */}
+      <PostList activeIndex={activeIndex}>
+        {data.map(({ id, image }) => (
+          <Post key={id} src={image} />
         ))}
       </PostList>
       {1 < data.length && (
@@ -36,14 +41,20 @@ const PostImageList = ({ data }) => {
 };
 
 const Wrapper = styled.section`
-  height: 600px;
+  /* height: 600px; */
   position: relative;
+  overflow: hidden;
 `;
 
-const PostList = styled.ul``;
+const PostList = styled.ul`
+  display: flex;
+  align-items: center;
+  transform: ${({ activeIndex }) => `translateX(${-612 * activeIndex}px)`};
+  transition: transform 0.5s ease-in;
+`;
 
 const Post = styled.img`
-  width: 100%;
+  /* width: 100%;
   height: 100%;
   position: absolute;
   opacity: 0;
@@ -51,7 +62,9 @@ const Post = styled.img`
     props.active &&
     css`
       opacity: 1;
-    `}
+    `} */
+
+  min-width: 100%;
 `;
 
 const Btn = styled.button`
