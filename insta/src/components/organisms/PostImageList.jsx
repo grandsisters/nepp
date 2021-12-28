@@ -4,17 +4,18 @@ import { useState } from "react";
 const PostImageList = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const Nxt = ">";
-  const Prv = "<";
+  // const handlePrv = () => {
+  //   if (activeIndex === 0) return setActiveIndex(data.length - 1);
+  //   setActiveIndex(activeIndex - 1);
+  // };
 
-  const handlePrv = () => {
-    // if (activeIndex === 0) return setActiveIndex(data.length - 1);
-    setActiveIndex(activeIndex - 1);
-  };
+  // const handleNxt = () => {
+  //   if (data.length - 1 === activeIndex) return setActiveIndex(0);
+  //   setActiveIndex(activeIndex + 1);
+  // };
 
-  const handleNxt = () => {
-    // if (data.length - 1 === activeIndex) return setActiveIndex(0);
-    setActiveIndex(activeIndex + 1);
+  const handleIndex = (n) => {
+    setActiveIndex(() => activeIndex + n);
   };
 
   return (
@@ -26,8 +27,8 @@ const PostImageList = ({ data }) => {
       </PostList>
       {1 < data.length && (
         <>
-          {0 !== activeIndex && <PrvBtn onClick={handlePrv}>{Prv}</PrvBtn>}
-          {data.length - 1 !== activeIndex && <NxtBtn onClick={handleNxt}>{Nxt}</NxtBtn>}
+          {0 !== activeIndex && <PrvBtn onClick={() => handleIndex(-1)}>{"<"}</PrvBtn>}
+          {data.length - 1 !== activeIndex && <NxtBtn onClick={() => handleIndex(1)}>{">"}</NxtBtn>}
         </>
       )}
     </Wrapper>
@@ -57,8 +58,10 @@ const Btn = styled.button`
   position: absolute;
   z-index: 100;
   top: 50%;
-  border-radius: 25px;
-  border: 2px solid;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: 1px solid;
   opacity: 0.5;
   font-weight: bold;
   &:hover {
