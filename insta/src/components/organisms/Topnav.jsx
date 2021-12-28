@@ -50,6 +50,7 @@ const Header = styled.header`
   height: 60px;
   border-bottom: 1px solid #dbdbdb;
   width: 100%;
+  z-index: 1;
 `;
 
 const HeaderWrapper = styled.div`

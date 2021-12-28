@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Activity, Message, Comment, Bookmark, Emoticon, ETC } from "../../assets/images";
+import { PostImageList } from ".";
 
 const PostList = ({ data }) => {
   return (
@@ -14,10 +15,7 @@ const PostList = ({ data }) => {
             </Author>
             <ETC />
           </Tag>
-          {imageList.map((f) => (
-            <Post key={f.id} src={f.image} />
-          ))}
-          {/* <Post src={imageList.image} /> */}
+          <PostImageList data={imageList} />
           <BottomWrapper>
             <Menu>
               <ACM>
@@ -38,7 +36,12 @@ const PostList = ({ data }) => {
                 <More>더 보기</More>
               </AuthorWrapper>
               <MoreComments>댓글 {replys.total}개 모두 보기</MoreComments>
-              <ReplyCommnet></ReplyCommnet>
+              {replys.items.map((e) => (
+                <CommentWrapper>
+                  <CommentName>{e.user.name}</CommentName>
+                  <CommentContent>{e.content}</CommentContent>
+                </CommentWrapper>
+              ))}
               <Date>{created_at}</Date>
             </Comments>
           </BottomWrapper>
@@ -80,10 +83,6 @@ const Img = styled.img`
 
 const ID = styled.span`
   font-weight: bold;
-`;
-
-const Post = styled.img`
-  width: 100%;
 `;
 
 const BottomWrapper = styled.div`
@@ -130,15 +129,28 @@ const AuthorComments = styled.span`
 
 const More = styled.span`
   cursor: pointer;
+  color: rgb(167, 159, 149);
 `;
 
 const MoreComments = styled.span`
   cursor: pointer;
+  color: rgb(167, 159, 149);
 `;
 
-const ReplyCommnet = styled.span``;
+const CommentWrapper = styled.div`
+  font-size: 15px;
+`;
+
+const CommentName = styled.span`
+  font-weight: bold;
+`;
+
+const CommentContent = styled.span`
+  margin-left: 5px;
+`;
 
 const Date = styled.span`
+  margin-top: 5px;
   font-size: 12px;
 `;
 
