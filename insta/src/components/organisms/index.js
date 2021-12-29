@@ -8,3 +8,5 @@ export { default as TopNav } from "./Topnav";
 export { default as PostList } from "./PostList";
 export { default as ShortList } from "./ShortList";
 export { default as PostImageList } from "./PostImageList";
+export { default as MainRight } from "./MainRight";
+export { default as ProfileDropdown } from "./ProfileDropdown";

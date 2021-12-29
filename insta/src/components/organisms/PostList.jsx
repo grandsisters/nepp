@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Activity, Message, Comment, Bookmark, Emoticon, ETC } from "../../assets/images";
+import { ImgActivity, ImgMessage, ImgComment, ImgBookmark, ImgEmoticon, ImgETC } from "../../assets/images";
 import { PostImageList } from ".";
 
 const PostList = ({ data }) => {
@@ -13,20 +13,20 @@ const PostList = ({ data }) => {
               <Img src={user.profileImage} />
               <ID>{user.name}</ID>
             </Author>
-            <ETC />
+            <ImgETC />
           </Tag>
           <PostImageList data={imageList} />
           <BottomWrapper>
             <Menu>
               <ACM>
-                <Activity />
-                <Comment />
-                <Message />
+                <ImgActivity />
+                <ImgComment />
+                <ImgMessage />
               </ACM>
               <ImgIndexWrapper>
                 <ImageIndex />
               </ImgIndexWrapper>
-              <Bookmark />
+              <ImgBookmark />
             </Menu>
             <Comments>
               <NumberOfLike>좋아요 {likes.total}개</NumberOfLike>
@@ -46,7 +46,7 @@ const PostList = ({ data }) => {
             </Comments>
           </BottomWrapper>
           <WriteComment>
-            <Emoticon />
+            <ImgEmoticon />
             <CommentInput rows={1} placeholder="댓글 달기..." />
             <UploadComment>게시</UploadComment>
           </WriteComment>

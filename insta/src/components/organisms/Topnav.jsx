@@ -1,14 +1,24 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React, { useEffect, useState, useRef } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ImgHome, Message, New, Find, Activity } from "../../assets/images";
+import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity } from "../../assets/images";
+import { ProfileDropdown } from ".";
 
 const TopNav = () => {
-  const [dropdownActive, setDropdownActive] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownEl = useRef(null);
 
-  const HandleDropdown = () => {
-    setDropdownActive(!dropdownActive);
-  };
+  useEffect(() => {
+    const onClick = (e) => {
+      if (dropdownEl.current && !dropdownEl.current.contains(e.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.body.addEventListener("click", onClick);
+    return () => {
+      document.body.removeEventListener("click", onClick);
+    };
+  }, []);
 
   return (
     <Header>
@@ -23,20 +33,14 @@ const TopNav = () => {
         </Nav>
         <NavMenu>
           <ImgHome />
-          <Message />
-          <New />
-          <Find />
-          <Activity />
-          <ProfileWrapper onClick={HandleDropdown}>
-            <Profile src="https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/contacts-128.png" />
-            <ProfileDropdown active={dropdownActive}>
-              <MyProfile>프로필</MyProfile>
-              <Saved>저장됨</Saved>
-              <Config>설정</Config>
-              <ChangeAccount>계정 전환</ChangeAccount>
-              <Logout>로그아웃</Logout>
-            </ProfileDropdown>
-          </ProfileWrapper>
+          <ImgMessage />
+          <ImgNew />
+          <ImgFind />
+          <ImgActivity />
+          <DropdownWrapper ref={dropdownEl}>
+            <ProfileImg src="https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/contacts-128.png" onClick={() => setShowDropdown(!showDropdown)} />
+            {showDropdown && <ProfileDropdown />}
+          </DropdownWrapper>
         </NavMenu>
       </HeaderWrapper>
     </Header>
@@ -99,47 +103,13 @@ const NavMenu = styled.div`
   }
 `;
 
-const Profile = styled.img`
+const DropdownWrapper = styled.div``;
+
+const ProfileImg = styled.img`
   width: 24px;
   height: 24px;
   border: 1px solid black;
   border-radius: 15px;
-`;
-
-const ProfileWrapper = styled.div``;
-
-const ProfileDropdown = styled.ul`
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  z-index: 1;
-  border: 1px solid black;
-
-  padding: 0;
-  background: white;
-  display: none;
-
-  ${(props) =>
-    props.active &&
-    css`
-      display: block;
-    `}
-`;
-
-const list = styled.li`
-  padding: 10px;
-
-  &:hover {
-    background: grey;
-  }
-`;
-
-const MyProfile = styled(list)``;
-const Saved = styled(list)``;
-const Config = styled(list)``;
-const ChangeAccount = styled(list)``;
-const Logout = styled(list)`
-  border-top: 1px solid black;
 `;
 
 export default TopNav;
