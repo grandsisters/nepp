@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Login_SB = () => {
   return (
     <SecondBlock>
       <p>
-        계정이 없으신가요? <a href="https://www.instagram.com/accounts/signup/phone">가입하기</a>
+        계정이 없으신가요? <Link to="/Signup">가입하기</Link>
       </p>
     </SecondBlock>
   );

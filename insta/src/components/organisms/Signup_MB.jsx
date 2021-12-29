@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { AlsoDiv } from "../molecules";
 import { signup } from "../../apis/user";
 
@@ -32,13 +33,17 @@ const Signup_MB = () => {
       <Logo src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
       <SignupForm onSubmit={handleSubmit}>
         <p>친구들의 사진과 동영상을 보려면 가입하세요.</p>
-        <FacebookLoginBtn>Facebook으로 로그인</FacebookLoginBtn>
+        <Link to="/">
+          <FacebookLoginBtn>Facebook으로 로그인</FacebookLoginBtn>
+        </Link>
         <AlsoDiv />
         <NameInput placeholder="성명" name="name" onChange={handleChange} required />
         <IdInput placeholder="사용자 이름" name="user_name" onChange={handleChange} required />
         <PwInput placeholder="비밀번호" type="password" name="password" onChange={handleChange} required />
         <PwConfirm placeholder="비밀번호 확인" type="password" name="password_confirm" onChange={handleChange} required />
-        <SignupBtn>가입</SignupBtn>
+        <Link to="/Login">
+          <SignupBtn>가입</SignupBtn>
+        </Link>
       </SignupForm>
     </MainBlock>
   );
