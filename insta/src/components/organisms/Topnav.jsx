@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity } from "../../assets/images";
+import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo } from "../../assets/images";
 import { ProfileDropdown } from ".";
 
 const TopNav = () => {
@@ -38,7 +38,7 @@ const TopNav = () => {
           <ImgFind />
           <ImgActivity />
           <DropdownWrapper ref={dropdownEl}>
-            <ProfileImg src="https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/contacts-128.png" onClick={() => setShowDropdown(!showDropdown)} />
+            <ProfileImg src={ImgProfileLogo} onClick={() => setShowDropdown(!showDropdown)} />
             {showDropdown && <ProfileDropdown />}
           </DropdownWrapper>
         </NavMenu>
@@ -108,7 +108,6 @@ const DropdownWrapper = styled.div``;
 const ProfileImg = styled.img`
   width: 24px;
   height: 24px;
-  border: 1px solid black;
   border-radius: 15px;
 `;
 
