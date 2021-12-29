@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { TopNav } from "../organisms";
-import { PostList, ShortList } from "../organisms/";
+import { PostList, ShortList, MainRight } from "../organisms/";
 import ShortData from "../../data/ShortData";
 import PostData from "../../data/PostData";
 
@@ -14,7 +14,9 @@ const Main = () => {
           <ShortList data={ShortData} />
           <PostList data={PostData} />
         </Left>
-        <Right></Right>
+        <Right>
+          <MainRight />
+        </Right>
       </PageWrapper>
     </Page>
   );
@@ -29,11 +31,15 @@ const PageWrapper = styled.div`
   padding-top: 90px;
   max-width: 975px;
   margin: 0 auto;
+  display: flex;
 `;
 
 const Left = styled.div`
   margin-right: 28px;
+  max-width: 614px;
 `;
-const Right = styled.div``;
+const Right = styled.div`
+  flex: 1;
+`;
 
 export default Main;
