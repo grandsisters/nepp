@@ -2,10 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo } from "../../assets/images";
-import { ProfileDropdown } from ".";
+import { ProfileDropdown, ModalAddPost } from ".";
 
 const TopNav = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const dropdownEl = useRef(null);
 
   useEffect(() => {
@@ -20,30 +21,37 @@ const TopNav = () => {
     };
   }, []);
 
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <Header>
-      <HeaderWrapper>
-        <Link to="/">
-          <LogoImage src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
-        </Link>
-        <Nav>
-          <SearchWrapper>
-            <SearchInput placeholder="검색" />
-          </SearchWrapper>
-        </Nav>
-        <NavMenu>
-          <ImgHome />
-          <ImgMessage />
-          <ImgNew />
-          <ImgFind />
-          <ImgActivity />
-          <DropdownWrapper ref={dropdownEl}>
-            <ProfileImg src={ImgProfileLogo} onClick={() => setShowDropdown(!showDropdown)} />
-            {showDropdown && <ProfileDropdown />}
-          </DropdownWrapper>
-        </NavMenu>
-      </HeaderWrapper>
-    </Header>
+    <>
+      {showModal && <ModalAddPost onClose={handleModal} />}
+      <Header>
+        <HeaderWrapper>
+          <Link to="/">
+            <LogoImage src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
+          </Link>
+          <Nav>
+            <SearchWrapper>
+              <SearchInput placeholder="검색" />
+            </SearchWrapper>
+          </Nav>
+          <NavMenu>
+            <ImgHome />
+            <ImgMessage />
+            <ImgNew onClick={handleModal} />
+            <ImgFind />
+            <ImgActivity />
+            <DropdownWrapper ref={dropdownEl}>
+              <ProfileImg src={ImgProfileLogo} onClick={() => setShowDropdown(!showDropdown)} />
+              {showDropdown && <ProfileDropdown />}
+            </DropdownWrapper>
+          </NavMenu>
+        </HeaderWrapper>
+      </Header>
+    </>
   );
 };
 

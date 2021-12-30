@@ -13,20 +13,20 @@ const PostList = ({ data }) => {
               <Img src={user.profileImage} />
               <ID>{user.name}</ID>
             </Author>
-            <ImgETC />
+            <ImgETC style={{ cursor: "pointer" }} />
           </Tag>
           <PostImageList data={imageList} />
           <BottomWrapper>
             <Menu>
               <ACM>
-                <ImgActivity />
-                <ImgComment />
-                <ImgMessage />
+                <ImgActivity style={{ cursor: "pointer" }} />
+                <ImgComment style={{ cursor: "pointer" }} />
+                <ImgMessage style={{ cursor: "pointer" }} />
               </ACM>
               <ImgIndexWrapper>
                 <ImageIndex />
               </ImgIndexWrapper>
-              <ImgBookmark />
+              <ImgBookmark style={{ cursor: "pointer" }} />
             </Menu>
             <Comments>
               <NumberOfLike>좋아요 {likes.total}개</NumberOfLike>
@@ -46,7 +46,7 @@ const PostList = ({ data }) => {
             </Comments>
           </BottomWrapper>
           <WriteComment>
-            <ImgEmoticon />
+            <ImgEmoticon style={{ cursor: "pointer" }} />
             <CommentInput rows={1} placeholder="댓글 달기..." />
             <UploadComment>게시</UploadComment>
           </WriteComment>
@@ -133,6 +133,7 @@ const More = styled.span`
 `;
 
 const MoreComments = styled.span`
+  width: 155px;
   cursor: pointer;
   color: rgb(167, 159, 149);
 `;

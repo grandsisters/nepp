@@ -69,7 +69,7 @@ const Post = styled.img`
 
 const Btn = styled.button`
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   top: 50%;
   border-radius: 50%;
   width: 35px;
