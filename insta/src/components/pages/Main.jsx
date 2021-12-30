@@ -23,8 +23,9 @@ const Main = () => {
 };
 
 const Page = styled.div`
-  background: #fafafa;
+  /* background: #fafafa;
   min-height: 100vh;
+  min-width: 100vw; */
 `;
 
 const PageWrapper = styled.div`
