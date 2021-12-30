@@ -11,6 +11,26 @@ import { ReactComponent as ImgProfile } from "./profile.svg";
 import { ReactComponent as ImgSaved } from "./saved.svg";
 import { ReactComponent as ImgSetting } from "./setting.svg";
 import { ReactComponent as ImgChangeAccount } from "./changeAccount.svg";
+import { ReactComponent as ImgModalImage } from "./modalImage.svg";
+import { ReactComponent as ImgModalX } from "./modalX.svg";
+
 import ImgProfileLogo from "./profileLogo.jpg";
 
-export { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgComment, ImgBookmark, ImgEmoticon, ImgETC, ImgProfile, ImgSaved, ImgSetting, ImgChangeAccount, ImgProfileLogo };
+export {
+  ImgHome,
+  ImgMessage,
+  ImgNew,
+  ImgFind,
+  ImgActivity,
+  ImgComment,
+  ImgBookmark,
+  ImgEmoticon,
+  ImgETC,
+  ImgProfile,
+  ImgSaved,
+  ImgSetting,
+  ImgChangeAccount,
+  ImgProfileLogo,
+  ImgModalImage,
+  ImgModalX,
+};
