@@ -38,11 +38,12 @@ const ProfileWrapper = styled.div`
   top: 40px;
   right: -8px;
   z-index: 0;
+  border-radius: 10px;
 `;
 
 const DropdownMenu = styled.ul`
   width: 230px;
-  border-radius: 2%;
+  border-radius: 10px;
   background: #fff;
   position: relative;
   z-index: 1;

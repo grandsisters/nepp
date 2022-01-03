@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo, ImgBlackActivity } from "../../assets/images";
+import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo, ImgBlackActivity, ImgSelectedNew } from "../../assets/images";
 import { ProfileDropdown, ModalAddPost, ActivityDropdown } from ".";
 
 const TopNav = () => {
@@ -27,7 +27,6 @@ const TopNav = () => {
     const onClick = (e) => {
       if (ActivityDropdownEl.current && !ActivityDropdownEl.current.contains(e.target)) {
         setShowActivityDropdown(false);
-        console.log(e);
       }
     };
     document.body.addEventListener("click", onClick);
@@ -56,7 +55,9 @@ const TopNav = () => {
           <NavMenu>
             <ImgHome />
             <ImgMessage />
-            <ImgNew onClick={handleModal} />
+
+            <NewWrapper>{showModal ? <ImgSelectedNew /> : <ImgNew onClick={handleModal} />}</NewWrapper>
+
             <ImgFind />
             <ActivityDropdownWrapper ref={ActivityDropdownEl}>
               {showActivityDropdown ? (
@@ -67,7 +68,7 @@ const TopNav = () => {
               {showActivityDropdown && <ActivityDropdown />}
             </ActivityDropdownWrapper>
 
-            <ProfileDropdownWrapper ref={ProfileDropdownEl}>
+            <ProfileDropdownWrapper ref={ProfileDropdownEl} active={showProfileDropdown}>
               <ProfileImg src={ImgProfileLogo} onClick={() => setShowProfileDropdown(!showProfileDropdown)} />
               {showProfileDropdown && <ProfileDropdown />}
             </ProfileDropdownWrapper>
@@ -134,14 +135,30 @@ const NavMenu = styled.div`
   }
 `;
 
+const NewWrapper = styled.div``;
+
 const ActivityDropdownWrapper = styled.div``;
 
-const ProfileDropdownWrapper = styled.div``;
+const ProfileDropdownWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  ${(props) =>
+    props.active &&
+    css`
+      border: 1px solid black;
+    `}
+`;
 
 const ProfileImg = styled.img`
   width: 24px;
   height: 24px;
-  border-radius: 15px;
+  border-radius: 50%;
 `;
 
 export default TopNav;

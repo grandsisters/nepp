@@ -25,25 +25,29 @@ const ActivityDropdown = () => {
           </ActivityWrapper>
         ))}
       </ActivityLists>
+      <LittleThis />
     </DropdownWrapper>
   );
 };
 
 const DropdownWrapper = styled.div`
-  width: 500px;
-  height: 362px;
-  border: 1px solid #dbdbdb;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
   position: absolute;
   top: 40px;
   right: -8px;
-  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
-  border-radius: 2%;
-  background: #fff;
-  overflow: auto;
+  z-index: 0;
+  border-radius: 10px;
 `;
 
 const ActivityLists = styled.ul`
-  white-space: nowrap;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
 `;
 const ActivityWrapper = styled.div`
   padding: 3px 10px;
@@ -56,6 +60,7 @@ const EachActivity = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
 `;
 
 const EachWrapper = styled.div`
@@ -87,6 +92,18 @@ const ActivityBtn = styled.button`
   background: #0095f6;
   color: white;
   font-weight: bolder;
+  margin: 0 10px;
+`;
+
+const LittleThis = styled.div`
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  top: -8px;
+  right: 77px;
+  background: #fff;
 `;
 
 export default ActivityDropdown;

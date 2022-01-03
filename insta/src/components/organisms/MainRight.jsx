@@ -48,9 +48,9 @@ const Container = styled.div`
   width: 290px;
   height: 980px;
   height: 500px;
-  /* background: #dbdbdb; */
   position: sticky;
   top: 90px;
+  margin: 20px;
 `;
 
 const AccountWrapper = styled.div`
@@ -83,16 +83,22 @@ const IdWrapper = styled.div`
   flex-direction: column;
 `;
 
-const AccountId = styled.span``;
+const AccountId = styled.span`
+  font-size: 13px;
+  font-weight: 500;
+`;
 
 const BelowId = styled.span`
   color: rgb(167, 159, 149);
   font-size: 12px;
 `;
 
-const Buttons = styled.span`
+const Buttons = styled.button`
   color: #0095f6;
   font-size: 12px;
+  font-weight: bold;
+  border: none;
+  background: #ffffff;
 `;
 
 const ChangeBtn = styled(Buttons)``;
@@ -103,6 +109,8 @@ const RecommendTitle = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 15px 0 10px 0;
+  font-size: 14px;
+  font-weight: bold;
 `;
 
 const Title = styled.span`
@@ -111,6 +119,7 @@ const Title = styled.span`
 
 const SeeAllBtn = styled.span`
   font-size: 12px;
+  font-weight: bold;
 `;
 
 const OtherImg = styled.img`
@@ -129,6 +138,7 @@ const EachInform = styled.li`
   font-size: 11px;
   font-weight: 400;
   line-height: 13px;
+  color: rgb(167, 159, 149);
 
   &::after {
     content: "|";
@@ -139,6 +149,7 @@ const EachInform = styled.li`
 `;
 
 const InformBottom = styled.p`
+  color: rgb(167, 159, 149);
   font-size: 11px;
   font-weight: 400;
   line-height: 13px;
