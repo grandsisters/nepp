@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ImgActivity, ImgMessage, ImgComment, ImgBookmark, ImgEmoticon, ImgETC } from "../../assets/images";
-import { PostImageList } from ".";
+import { PostImageList, ModalPostList } from ".";
 
 const PostList = ({ data }) => {
+  const [ETCModal, setETCModal] = useState(false);
+
+  const handleModal = () => {
+    setETCModal(!ETCModal);
+  };
+
+  const handleComment = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
+      {ETCModal && <ModalPostList onClose={handleModal} />}
       {data.map(({ id, created_at, content, user, imageList, likes, replys }) => (
         <PostListWrapper key={id}>
           <Tag>
@@ -13,7 +24,7 @@ const PostList = ({ data }) => {
               <Img src={user.profileImage} />
               <ID>{user.name}</ID>
             </Author>
-            <ImgETC style={{ cursor: "pointer" }} />
+            <ImgETC style={{ cursor: "pointer" }} onClick={handleModal} />
           </Tag>
           <PostImageList data={imageList} />
           <BottomWrapper>
@@ -48,7 +59,7 @@ const PostList = ({ data }) => {
           <WriteComment>
             <ImgEmoticon style={{ cursor: "pointer" }} />
             <CommentInput rows={1} placeholder="댓글 달기..." />
-            <UploadComment>게시</UploadComment>
+            <UploadComment onClick={handleComment}>게시</UploadComment>
           </WriteComment>
         </PostListWrapper>
       ))}

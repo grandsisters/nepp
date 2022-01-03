@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo, ImgBlackActivity, ImgSelectedNew } from "../../assets/images";
-import { ProfileDropdown, ModalAddPost, ActivityDropdown } from ".";
+import { ProfileDropdown, ModalTopNav, ActivityDropdown } from ".";
 
 const TopNav = () => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
@@ -41,7 +41,7 @@ const TopNav = () => {
 
   return (
     <>
-      {showModal && <ModalAddPost onClose={handleModal} />}
+      {showModal && <ModalTopNav onClose={handleModal} />}
       <Header>
         <HeaderWrapper>
           <Link to="/">
