@@ -1,18 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo } from "../../assets/images";
-import { ProfileDropdown, ModalAddPost } from ".";
+import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo, ImgBlackActivity } from "../../assets/images";
+import { ProfileDropdown, ModalAddPost, ActivityDropdown } from ".";
 
 const TopNav = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const [showActivityDropdown, setShowActivityDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const dropdownEl = useRef(null);
+  const ProfileDropdownEl = useRef(null);
+  const ActivityDropdownEl = useRef(null);
 
   useEffect(() => {
     const onClick = (e) => {
-      if (dropdownEl.current && !dropdownEl.current.contains(e.target)) {
-        setShowDropdown(false);
+      if (ProfileDropdownEl.current && !ProfileDropdownEl.current.contains(e.target)) {
+        setShowProfileDropdown(false);
       }
     };
     document.body.addEventListener("click", onClick);
@@ -20,6 +22,19 @@ const TopNav = () => {
       document.body.removeEventListener("click", onClick);
     };
   }, []);
+
+  useEffect(() => {
+    const onClick = (e) => {
+      if (ActivityDropdownEl.current && !ActivityDropdownEl.current.contains(e.target)) {
+        setShowActivityDropdown(false);
+        console.log(e);
+      }
+    };
+    document.body.addEventListener("click", onClick);
+    return () => {
+      document.body.removeEventListener("click", onClick);
+    };
+  }, [showActivityDropdown]);
 
   const handleModal = () => {
     setShowModal(!showModal);
@@ -43,11 +58,19 @@ const TopNav = () => {
             <ImgMessage />
             <ImgNew onClick={handleModal} />
             <ImgFind />
-            <ImgActivity />
-            <DropdownWrapper ref={dropdownEl}>
-              <ProfileImg src={ImgProfileLogo} onClick={() => setShowDropdown(!showDropdown)} />
-              {showDropdown && <ProfileDropdown />}
-            </DropdownWrapper>
+            <ActivityDropdownWrapper ref={ActivityDropdownEl}>
+              {showActivityDropdown ? (
+                <ImgBlackActivity onClick={() => setShowActivityDropdown(!showActivityDropdown)} />
+              ) : (
+                <ImgActivity onClick={() => setShowActivityDropdown(!showActivityDropdown)} />
+              )}
+              {showActivityDropdown && <ActivityDropdown />}
+            </ActivityDropdownWrapper>
+
+            <ProfileDropdownWrapper ref={ProfileDropdownEl}>
+              <ProfileImg src={ImgProfileLogo} onClick={() => setShowProfileDropdown(!showProfileDropdown)} />
+              {showProfileDropdown && <ProfileDropdown />}
+            </ProfileDropdownWrapper>
           </NavMenu>
         </HeaderWrapper>
       </Header>
@@ -111,7 +134,9 @@ const NavMenu = styled.div`
   }
 `;
 
-const DropdownWrapper = styled.div``;
+const ActivityDropdownWrapper = styled.div``;
+
+const ProfileDropdownWrapper = styled.div``;
 
 const ProfileImg = styled.img`
   width: 24px;

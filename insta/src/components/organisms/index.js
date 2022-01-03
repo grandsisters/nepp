@@ -11,3 +11,4 @@ export { default as PostImageList } from "./PostImageList";
 export { default as MainRight } from "./MainRight";
 export { default as ProfileDropdown } from "./ProfileDropdown";
 export { default as ModalAddPost } from "./ModalAddPost";
+export { default as ActivityDropdown } from "./ActivityDropdown";
