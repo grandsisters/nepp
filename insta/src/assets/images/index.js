@@ -13,6 +13,7 @@ import { ReactComponent as ImgSetting } from "./setting.svg";
 import { ReactComponent as ImgChangeAccount } from "./changeAccount.svg";
 import { ReactComponent as ImgModalImage } from "./modalImage.svg";
 import { ReactComponent as ImgModalX } from "./modalX.svg";
+import { ReactComponent as ImgBlackActivity } from "./blackActivity.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 
@@ -22,6 +23,7 @@ export {
   ImgNew,
   ImgFind,
   ImgActivity,
+  ImgBlackActivity,
   ImgComment,
   ImgBookmark,
   ImgEmoticon,
