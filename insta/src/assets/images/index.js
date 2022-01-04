@@ -17,6 +17,7 @@ import { ReactComponent as ImgBlackActivity } from "./blackActivity.svg";
 import { ReactComponent as ImgSelectedNew } from "./selectedNew.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
+import ImgBackground from "./backgroundImg.jpg";
 
 export {
   ImgHome,
@@ -37,4 +38,5 @@ export {
   ImgModalImage,
   ImgModalX,
   ImgSelectedNew,
+  ImgBackground,
 };
