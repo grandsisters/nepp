@@ -36,6 +36,47 @@ const Landing = () => {
   );
 };
 
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  position: relative;
+`;
+
+const BackgroundImg = styled.img`
+  width: 100%;
+  /* height: 100%; */
+`;
+
+const IntroBox = styled.div`
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  position: absolute;
+
+  color: #fff;
+`;
+
+const TitleBox = styled.div``;
+
+const Title = styled.h2`
+  text-align: center;
+`;
+const Title2 = styled.h3`
+  text-align: center;
+`;
+
 const GlassWrapper = styled.div`
   position: relative;
   width: 190px;
@@ -73,46 +114,6 @@ const GlassTalk = styled.span`
     css`
       display: block;
     `}
-`;
-
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  overflow: hidden;
-
-  position: relative;
-`;
-
-const BackgroundImg = styled.img`
-  width: 100%;
-`;
-
-const IntroBox = styled.div`
-  height: 100%;
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-
-  position: absolute;
-
-  color: #fff;
-`;
-
-const TitleBox = styled.div``;
-
-const Title = styled.h2`
-  text-align: center;
-`;
-const Title2 = styled.h3`
-  text-align: center;
 `;
 
 const PortfolioBox = styled.div`
