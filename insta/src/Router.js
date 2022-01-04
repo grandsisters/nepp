@@ -9,7 +9,7 @@ const Router = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/" element={<TopNav />}>
           <Route path="main" element={<Main />} />
-          <Route path="/setting" element={<Setting />} />
+          <Route path="setting" element={<Setting />} />
           <Route path="profile" element={<Profile />}>
             <Route path="index" element={<ProfileIndex />} />
             <Route path="saved" element={<ProfileSaved />} />
