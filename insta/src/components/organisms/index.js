@@ -18,3 +18,5 @@ export { default as FooterNav } from "./FooterNav";
 export { default as ProfileIndex } from "./profile/Index";
 export { default as ProfileSaved } from "./profile/Saved";
 export { default as ProfileTagged } from "./profile/Tagged";
+
+export { default as CarouselBox } from "./CarouselBox";
