@@ -18,6 +18,7 @@ import { ReactComponent as ImgSelectedNew } from "./selectedNew.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 import ImgBackground from "./backgroundImg.jpg";
+import ImgGlasses from "./glasses.png";
 
 export {
   ImgHome,
@@ -39,4 +40,5 @@ export {
   ImgModalX,
   ImgSelectedNew,
   ImgBackground,
+  ImgGlasses,
 };
