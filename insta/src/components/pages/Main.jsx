@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { TopNav } from "../organisms";
 import { PostList, ShortList, MainRight } from "../organisms/";
 import ShortData from "../../data/ShortData";
 import PostData from "../../data/PostData";
@@ -8,7 +7,6 @@ import PostData from "../../data/PostData";
 const Main = () => {
   return (
     <Page>
-      <TopNav />
       <PageWrapper>
         <Left>
           <ShortList data={ShortData} />

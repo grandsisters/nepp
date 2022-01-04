@@ -1,36 +1,11 @@
-import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
-import { TopNav } from "../organisms";
+import styled from "styled-components";
+import { NavLink, Outlet } from "react-router-dom";
 import { ImgProfileLogo, ImgSetting } from "../../assets/images";
-import { useState } from "react";
 import { FooterNav } from "../organisms";
 
 const Profile = () => {
-  const [activePost, setactivePost] = useState(true);
-  const [activeSaved, setactiveSaved] = useState(false);
-  const [activeTaged, setactiveTaged] = useState(false);
-
-  const handleActivePost = () => {
-    setactivePost(true);
-    setactiveSaved(false);
-    setactiveTaged(false);
-  };
-
-  const handleActiveSaved = () => {
-    setactivePost(false);
-    setactiveSaved(true);
-    setactiveTaged(false);
-  };
-
-  const handleActiveTaged = () => {
-    setactivePost(false);
-    setactiveSaved(false);
-    setactiveTaged(true);
-  };
-
   return (
-    <>
-      <TopNav />
+    <ProfileWrapper>
       <Wrapper>
         <MyProfile>
           <ProfileLogo src={ImgProfileLogo} />
@@ -53,33 +28,37 @@ const Profile = () => {
             </MyActivity>
             <MyName>김동현</MyName>
           </ProfileDiv>
-          <BinDiv></BinDiv>
         </MyProfile>
         <Others>
           <OtherMenus>
-            <Links to="/profile" onClick={handleActivePost} active={activePost}>
+            <Links end to="index">
               <Posts>게시물</Posts>
             </Links>
-            <Links to="/profile" onClick={handleActiveSaved} active={activeSaved}>
+            <Links to="saved">
               <SavedPost>저장됨</SavedPost>
             </Links>
-            <Links to="/profile" onClick={handleActiveTaged} active={activeTaged}>
-              <Taged>태그됨</Taged>
+            <Links to="tagged">
+              <Tagged>태그됨</Tagged>
             </Links>
           </OtherMenus>
-          <OtherDiv></OtherDiv>
+          <Outlet />
         </Others>
       </Wrapper>
       <FooterNav />
-    </>
+    </ProfileWrapper>
   );
 };
+
+const ProfileWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 200px;
+`;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
   padding-top: 90px;
   max-width: 975px;
   margin: 0 auto;
@@ -88,7 +67,6 @@ const Wrapper = styled.div`
 const MyProfile = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
   margin-bottom: 40px;
 `;
 
@@ -96,7 +74,7 @@ const ProfileLogo = styled.img`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: 20px;
+  margin: 40px 120px 40px 80px;
 `;
 
 const ProfileDiv = styled.div`
@@ -146,8 +124,6 @@ const MyName = styled.span`
   font-weight: bold;
 `;
 
-const BinDiv = styled.div``;
-
 const Others = styled.div`
   border-top: 1px solid #dbdbdb;
   padding-top: 0;
@@ -159,7 +135,7 @@ const OtherMenus = styled.div`
   align-items: center;
 `;
 
-const Links = styled(Link)`
+const Links = styled(NavLink)`
   display: flex;
   align-items: center;
   color: #999999;
@@ -175,21 +151,19 @@ const Links = styled(Link)`
     color: #dbdbdb;
   }
 
-  ${(props) =>
-    props.active &&
-    css`
-      font-weight: bold;
-      color: black;
-      border-top: 1px solid black;
-      padding: 20px 0;
-    `}
+  &.active {
+    font-weight: bold;
+    color: black;
+    margin-top: -2px;
+    border-top: 1px solid black;
+    padding-top: 20px;
+  }
 `;
 
 const spansInOthers = styled.span``;
 
 const Posts = styled(spansInOthers)``;
 const SavedPost = styled(spansInOthers)``;
-const Taged = styled(spansInOthers)``;
-const OtherDiv = styled.div``;
+const Tagged = styled(spansInOthers)``;
 
 export default Profile;
