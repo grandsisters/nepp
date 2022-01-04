@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { useState, useEffect } from "react";
-
 import LandingImgList from "../../assets/images/LandingCarouselImg";
 
 const CarouselBox = () => {
@@ -11,7 +10,7 @@ const CarouselBox = () => {
       const ImgIndex = activeImg === LandingImgList.length - 1 ? 0 : activeImg + 1;
       setActiveImg(ImgIndex);
     };
-    setInterval(ChangeIndex, 3000);
+    setInterval(ChangeIndex, 3500);
     return () => {
       clearInterval(ChangeIndex);
     };
@@ -46,14 +45,13 @@ const Image = styled.img`
   position: absolute;
 
   opacity: 0;
-
-  transition: opacity 1.4s ease-in;
+  transition: opacity 1.4s ease-out;
 
   ${(props) =>
     props.active &&
     css`
       opacity: 1;
-      transition: opacity 1.4s ease-out;
+      transition: opacity 1.4s ease-in;
     `}
 `;
 
