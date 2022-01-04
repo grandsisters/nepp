@@ -31,14 +31,16 @@ const FooterNav = () => {
 };
 
 const Footer = styled.div`
-  position: fixed;
-  bottom: 0%;
+  background: #fafafa;
+  position: absolute;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 130px;
+  height: 60px;
+  z-index: 1;
 `;
 
 const InformOne = styled.div`

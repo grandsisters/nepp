@@ -98,7 +98,7 @@ const Buttons = styled.button`
   font-size: 12px;
   font-weight: bold;
   border: none;
-  background: #ffffff;
+  background: none;
 `;
 
 const ChangeBtn = styled(Buttons)``;

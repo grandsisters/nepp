@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { ImgHome, ImgMessage, ImgNew, ImgFind, ImgActivity, ImgProfileLogo, ImgBlackActivity, ImgSelectedNew } from "../../assets/images";
 import { ProfileDropdown, ModalTopNav, ActivityDropdown } from ".";
 
@@ -44,7 +44,7 @@ const TopNav = () => {
       {showModal && <ModalTopNav onClose={handleModal} />}
       <Header>
         <HeaderWrapper>
-          <Link to="/">
+          <Link to="main">
             <LogoImage src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
           </Link>
           <Nav>
@@ -60,21 +60,18 @@ const TopNav = () => {
 
             <ImgFind />
             <ActivityDropdownWrapper ref={ActivityDropdownEl}>
-              {showActivityDropdown ? (
-                <ImgBlackActivity onClick={() => setShowActivityDropdown(!showActivityDropdown)} />
-              ) : (
-                <ImgActivity onClick={() => setShowActivityDropdown(!showActivityDropdown)} />
-              )}
+              {showActivityDropdown ? <ImgBlackActivity onClick={() => setShowActivityDropdown(false)} /> : <ImgActivity onClick={() => setShowActivityDropdown(true)} />}
               {showActivityDropdown && <ActivityDropdown />}
             </ActivityDropdownWrapper>
 
-            <ProfileDropdownWrapper ref={ProfileDropdownEl} active={showProfileDropdown}>
-              <ProfileImg src={ImgProfileLogo} onClick={() => setShowProfileDropdown(!showProfileDropdown)} />
+            <ProfileDropdownWrapper active={showProfileDropdown}>
+              <ProfileImg src={ImgProfileLogo} onClick={() => setShowProfileDropdown(!showProfileDropdown)} ref={ProfileDropdownEl} />
               {showProfileDropdown && <ProfileDropdown />}
             </ProfileDropdownWrapper>
           </NavMenu>
         </HeaderWrapper>
       </Header>
+      <Outlet />
     </>
   );
 };

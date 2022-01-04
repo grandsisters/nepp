@@ -5,10 +5,10 @@ import { ImgProfile, ImgSaved, ImgSetting, ImgChangeAccount } from "../../assets
 
 const ProfileDropdown = () => {
   const itemList = [
-    { link: "/profile", image: <ImgProfile />, name: "프로필" },
+    { link: "/profile/index", image: <ImgProfile />, name: "프로필" },
     { link: "/profile/saved", image: <ImgSaved />, name: "저장됨" },
-    { link: "/accounts/edit", image: <ImgSetting />, name: "설정" },
-    { link: "/", image: <ImgChangeAccount />, name: "계정 전환" },
+    { link: "/setting", image: <ImgSetting />, name: "설정" },
+    { link: "/login", image: <ImgChangeAccount />, name: "계정 전환" },
   ];
 
   return (

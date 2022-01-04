@@ -14,3 +14,7 @@ export { default as ModalTopNav } from "./ModalTopNav";
 export { default as ModalPostList } from "./ModalPostList";
 export { default as ActivityDropdown } from "./ActivityDropdown";
 export { default as FooterNav } from "./FooterNav";
+
+export { default as ProfileIndex } from "./profile/Index";
+export { default as ProfileSaved } from "./profile/Saved";
+export { default as ProfileTagged } from "./profile/Tagged";

@@ -6,7 +6,7 @@ const Signup_SB = () => {
   return (
     <SecondBlock>
       <p>
-        계정이 있으신가요? <Link to="/Login">로그인</Link>
+        계정이 있으신가요? <Link to="/login">로그인</Link>
       </p>
     </SecondBlock>
   );

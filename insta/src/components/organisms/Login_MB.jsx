@@ -10,16 +10,16 @@ const Login_MB = () => {
       <LoginForm>
         <IdInput placeholder="전화번호, 사용자 이름 또는 이메일" />
         <PwInput placeholder="비밀번호" />
-        <Link to="/">
+        <Link to="/main">
           <LoginBtn>로그인</LoginBtn>
         </Link>
       </LoginForm>
       <FormBottom>
         <AlsoDiv />
         <Etc>
-          <Link to="/">Facebook으로 로그인</Link>
+          <Link to="/main">Facebook으로 로그인</Link>
 
-          <Link to="/">비밀번호를 잊으셨나요?</Link>
+          <Link to="/signup">비밀번호를 잊으셨나요?</Link>
         </Etc>
       </FormBottom>
     </MainBlock>
