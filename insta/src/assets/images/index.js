@@ -1,7 +1,7 @@
 import { ReactComponent as ImgHome } from "./home.svg";
 import { ReactComponent as ImgMessage } from "./message.svg";
 import { ReactComponent as ImgNew } from "./new.svg";
-import { ReactComponent as ImgFind } from "./find.svg";
+import { ReactComponent as ImgExplore } from "./Explore.svg";
 import { ReactComponent as ImgActivity } from "./activity.svg";
 import { ReactComponent as ImgComment } from "./comment.svg";
 import { ReactComponent as ImgBookmark } from "./bookmark.svg";
@@ -15,6 +15,13 @@ import { ReactComponent as ImgModalImage } from "./modalImage.svg";
 import { ReactComponent as ImgModalX } from "./modalX.svg";
 import { ReactComponent as ImgBlackActivity } from "./blackActivity.svg";
 import { ReactComponent as ImgSelectedNew } from "./selectedNew.svg";
+import { ReactComponent as ImgBlackHome } from "./blackHome.svg";
+import { ReactComponent as ImgBlackMessage } from "./blackMessage.svg";
+import { ReactComponent as ImgBlackExplore } from "./blackExplore.svg";
+import { ReactComponent as ImgPaperAirplane } from "./paperAirplane.svg";
+import { ReactComponent as ImgWriteMessage } from "./writeMessage.svg";
+import { ReactComponent as ImgCheck } from "./check.svg";
+import { ReactComponent as ImgXBtn } from "./XBtn.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 import ImgBackground from "./backgroundImg.jpg";
@@ -24,7 +31,7 @@ export {
   ImgHome,
   ImgMessage,
   ImgNew,
-  ImgFind,
+  ImgExplore,
   ImgActivity,
   ImgBlackActivity,
   ImgComment,
@@ -41,4 +48,11 @@ export {
   ImgSelectedNew,
   ImgBackground,
   ImgGlasses,
+  ImgBlackHome,
+  ImgBlackMessage,
+  ImgBlackExplore,
+  ImgPaperAirplane,
+  ImgWriteMessage,
+  ImgCheck,
+  ImgXBtn,
 };
