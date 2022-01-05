@@ -39,6 +39,7 @@ const Landing = () => {
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
+  background: black;
 
   display: flex;
   justify-content: center;
@@ -117,7 +118,7 @@ const GlassTalk = styled.span`
 `;
 
 const PortfolioBox = styled.div`
-  width: 40%;
+  width: 80%;
   height: 50%;
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -140,6 +141,7 @@ const LinkBtn = styled.button`
   width: 90px;
   height: 20px;
   background: rgb(54, 172, 250);
+  margin-bottom: 20px;
 
   color: #fff;
   font-weight: bold;

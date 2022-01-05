@@ -52,8 +52,8 @@ const Profile = () => {
 const ProfileWrapper = styled.div`
   position: relative;
   width: 100%;
-  min-height: 100%;
-  padding-bottom: 200px;
+  min-height: 100vh;
+  /* padding-bottom: 100px; */
 `;
 
 const Wrapper = styled.div`

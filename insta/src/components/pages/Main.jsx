@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { PostList, ShortList, MainRight } from "../organisms/";
 import ShortData from "../../data/ShortData";
 import PostData from "../../data/PostData";
+import ETCModal from "../organisms/PostList";
 
 const Main = () => {
   return (
-    <Page>
+    <Page active={ETCModal}>
       <PageWrapper>
         <Left>
           <ShortList data={ShortData} />
