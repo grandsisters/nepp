@@ -17,30 +17,30 @@ const FooterNav = () => {
   ];
 
   return (
-    <>
-      <Footer>
-        <InformOne>
-          {InformOneData.map((e) => (
-            <a href="naver.com">{e.name}</a>
-          ))}
-        </InformOne>
-        <InformTwo>한국어 © 2022 Instagram from Meta</InformTwo>
-      </Footer>
-    </>
+    <Footer>
+      <InformOne>
+        {InformOneData.map((e) => (
+          <a href="naver.com">{e.name}</a>
+        ))}
+      </InformOne>
+      <InformTwo>한국어 © 2022 Instagram from Meta</InformTwo>
+    </Footer>
   );
 };
 
 const Footer = styled.div`
-  background: #fafafa;
   position: absolute;
   bottom: 0;
+
+  background: #fafafa;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 60px;
-  z-index: 1;
 `;
 
 const InformOne = styled.div`

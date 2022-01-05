@@ -1,34 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ImgProfile, ImgSaved, ImgSetting, ImgChangeAccount } from "../../assets/images";
+import ModalAccountChange from "../organisms/ModalAccountChange";
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({ onClose }) => {
   const itemList = [
     { link: "/profile/index", image: <ImgProfile />, name: "프로필" },
     { link: "/profile/saved", image: <ImgSaved />, name: "저장됨" },
     { link: "/setting", image: <ImgSetting />, name: "설정" },
-    { link: "/login", image: <ImgChangeAccount />, name: "계정 전환" },
   ];
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = showModal ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showModal]);
+
   return (
-    <ProfileWrapper>
-      <DropdownMenu>
-        {itemList.map((e) => (
-          <Link to={e.link}>
-            <Item>
-              {e.image}
-              <ItemName>{e.name}</ItemName>
-            </Item>
+    <div onClick={onClose}>
+      {showModal && <ModalAccountChange onClose={handleModal} />}
+      <Backdrop />
+      <ProfileWrapper>
+        <DropdownMenu>
+          {itemList.map((e, i) => (
+            <Link to={e.link} key={i}>
+              <Item>
+                {e.image}
+                <ItemName>{e.name}</ItemName>
+              </Item>
+            </Link>
+          ))}
+
+          <Item onClick={() => setShowModal(!showModal)}>
+            <ImgChangeAccount />
+            <ItemName>계정 전환</ItemName>
+          </Item>
+
+          <HR />
+          <Link to="/login">
+            <Item>로그아웃</Item>
           </Link>
-        ))}
-        <HR />
-        <Link to="/login">
-          <Item>로그아웃</Item>
-        </Link>
-      </DropdownMenu>
-      <LittleThis />
-    </ProfileWrapper>
+        </DropdownMenu>
+        <LittleThis />
+      </ProfileWrapper>
+    </div>
   );
 };
 
@@ -83,6 +106,15 @@ const HR = styled.hr`
 const ItemName = styled.li`
   padding-left: 10px;
   font-size: 14px;
+`;
+
+const Backdrop = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: default;
 `;
 
 export default ProfileDropdown;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ActivityDropdown = () => {
+const ActivityDropdown = ({ onClose }) => {
   const ActivityData = [
     { date: "이번 주", img: "https://i.pinimg.com/736x/20/87/dc/2087dc617106100ab0716039317d3db8.jpg", name: "tomhardy" },
     { date: "이번 달", img: "https://www.mens-hairstyle.com/wp-content/uploads/2020/01/1-thomas-shelby-haircut-2301202015301.jpg", name: "Thomas_Shelby" },
@@ -8,25 +8,28 @@ const ActivityDropdown = () => {
   ];
 
   return (
-    <DropdownWrapper>
-      <ActivityLists>
-        {ActivityData.map((e) => (
-          <ActivityWrapper>
-            <ActivityDate>{e.date}</ActivityDate>
-            <EachActivity>
-              <EachWrapper>
-                <ActivityImg src={e.img} />
-                <TextWrapper>
-                  <ActicityText>{e.name}님이 회원님을 팔로우하기 시작했습니다.</ActicityText>
-                </TextWrapper>
-              </EachWrapper>
-              <ActivityBtn>팔로우</ActivityBtn>
-            </EachActivity>
-          </ActivityWrapper>
-        ))}
-      </ActivityLists>
-      <LittleThis />
-    </DropdownWrapper>
+    <>
+      <BackDrop onClick={onClose} />
+      <DropdownWrapper>
+        <ActivityLists>
+          {ActivityData.map((e, i) => (
+            <ActivityWrapper key={i}>
+              <ActivityDate>{e.date}</ActivityDate>
+              <EachActivity>
+                <EachWrapper>
+                  <ActivityImg src={e.img} />
+                  <TextWrapper>
+                    <ActicityText>{e.name}님이 회원님을 팔로우하기 시작했습니다.</ActicityText>
+                  </TextWrapper>
+                </EachWrapper>
+                <ActivityBtn>팔로우</ActivityBtn>
+              </EachActivity>
+            </ActivityWrapper>
+          ))}
+        </ActivityLists>
+        <LittleThis />
+      </DropdownWrapper>
+    </>
   );
 };
 
@@ -43,7 +46,7 @@ const ActivityLists = styled.ul`
   background: #fff;
   position: relative;
   z-index: 1;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   display: flex;
   flex-direction: column;
 
@@ -51,6 +54,10 @@ const ActivityLists = styled.ul`
 `;
 const ActivityWrapper = styled.div`
   padding: 3px 10px;
+
+  &:last-child {
+    border-top: 1px solid #dbdbdb;
+  }
 `;
 const ActivityDate = styled.p`
   font-size: 14px;
@@ -104,6 +111,14 @@ const LittleThis = styled.div`
   top: -8px;
   right: 77px;
   background: #fff;
+`;
+const BackDrop = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: default;
 `;
 
 export default ActivityDropdown;

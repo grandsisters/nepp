@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const ShortList = ({ data }) => {
-  console.log(data);
   return (
     <ShortListWrapper>
       {data.map((e) => (

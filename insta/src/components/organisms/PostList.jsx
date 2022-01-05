@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { ImgActivity, ImgMessage, ImgComment, ImgBookmark, ImgEmoticon, ImgETC } from "../../assets/images";
+import { ImgActivity, ImgMessage, ImgComment, ImgBookmark, ImgEmoticon } from "../../assets/images";
 import { PostImageList, ModalPostList } from ".";
 
 const PostList = ({ data }) => {
-  const [ETCModal, setETCModal] = useState(false);
-
-  const handleModal = () => {
-    setETCModal(!ETCModal);
-  };
-
   const handleComment = (e) => {
     e.preventDefault();
   };
 
   return (
-    <>
-      {ETCModal && <ModalPostList onClose={handleModal} />}
+    <Wrapper>
       {data.map(({ id, created_at, content, user, imageList, likes, replys }) => (
         <PostListWrapper key={id}>
           <Tag>
@@ -24,7 +17,9 @@ const PostList = ({ data }) => {
               <Img src={user.profileImage} />
               <ID>{user.name}</ID>
             </Author>
-            <ImgETC style={{ cursor: "pointer" }} onClick={handleModal} />
+            <ETCWrapper>
+              <ModalPostList />
+            </ETCWrapper>
           </Tag>
           <PostImageList data={imageList} />
           <BottomWrapper>
@@ -47,8 +42,8 @@ const PostList = ({ data }) => {
                 <More>더 보기</More>
               </AuthorWrapper>
               <MoreComments>댓글 {replys.total}개 모두 보기</MoreComments>
-              {replys.items.map((e) => (
-                <CommentWrapper>
+              {replys.items.map((e, i) => (
+                <CommentWrapper key={i}>
                   <CommentName>{e.user.name}</CommentName>
                   <CommentContent>{e.content}</CommentContent>
                 </CommentWrapper>
@@ -63,9 +58,14 @@ const PostList = ({ data }) => {
           </WriteComment>
         </PostListWrapper>
       ))}
-    </>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 const PostListWrapper = styled.div`
   width: 614px;
@@ -95,6 +95,8 @@ const Img = styled.img`
 const ID = styled.span`
   font-weight: bold;
 `;
+
+const ETCWrapper = styled.div``;
 
 const BottomWrapper = styled.div`
   padding: 5px;

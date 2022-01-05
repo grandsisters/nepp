@@ -1,22 +1,50 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { useState, useEffect } from "react";
+import { ImgETC } from "../../assets/images";
 
-const ModalPostList = ({ onClose }) => {
+const ModalPostList = () => {
+  const [ETCModal, setETCModal] = useState(false);
+
+  const handleModal = () => {
+    setETCModal(!ETCModal);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = ETCModal ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [ETCModal]);
+
   return (
     <Container>
-      <ModalBack onClick={onClose} />
-      <Modal>
-        <Report>신고</Report>
-        <CancelFollow>팔로우 취소</CancelFollow>
-        <MoveTo>게시물로 이동</MoveTo>
-        <Share>퍼가기</Share>
-        <Cancel onClick={onClose}>취소</Cancel>
-      </Modal>
+      <ImgETC style={{ cursor: "pointer" }} onClick={handleModal} />
+      <ModalWrapper active={ETCModal}>
+        <ModalBack onClick={handleModal} />
+        <Modal>
+          <Report>신고</Report>
+          <CancelFollow>팔로우 취소</CancelFollow>
+          <MoveTo>게시물로 이동</MoveTo>
+          <Share>퍼가기</Share>
+          <Cancel onClick={handleModal}>취소</Cancel>
+        </Modal>
+      </ModalWrapper>
     </Container>
   );
 };
 
 const Container = styled.div`
   position: relative;
+`;
+
+const ModalWrapper = styled.div`
+  display: none;
+
+  ${(props) =>
+    props.active &&
+    css`
+      display: block;
+    `}
 `;
 
 const ModalBack = styled.div`
@@ -32,9 +60,9 @@ const ModalBack = styled.div`
 
 const Modal = styled.div`
   width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
+  top: 30%;
+  left: 40%;
   z-index: 2;
   background: #fff;
   border: 1px solid #dbdbdb;
