@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProfileTagged, ProfileSaved, ProfileIndex, TopNav } from "./components/organisms";
-import { Login, Signup, Main, Profile, Landing, Setting } from "./components/pages";
+import { Login, Signup, Main, Profile, Landing, Setting, Direct, Explore } from "./components/pages";
 
 const Router = () => {
   return (
@@ -10,6 +10,8 @@ const Router = () => {
         <Route path="/" element={<TopNav />}>
           <Route path="main" element={<Main />} />
           <Route path="setting" element={<Setting />} />
+          <Route path="direct" element={<Direct />} />
+          <Route path="explore" element={<Explore />} />
           <Route path="profile" element={<Profile />}>
             <Route path="index" element={<ProfileIndex />} />
             <Route path="saved" element={<ProfileSaved />} />
