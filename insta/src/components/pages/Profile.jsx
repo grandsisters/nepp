@@ -54,6 +54,7 @@ const ProfileWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   /* padding-bottom: 100px; */
+  background: #fafafa;
 `;
 
 const Wrapper = styled.div`

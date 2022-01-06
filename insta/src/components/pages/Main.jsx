@@ -22,16 +22,18 @@ const Main = () => {
 };
 
 const Page = styled.div`
-  /* background: #fafafa;
-  min-height: 100vh;
-  min-width: 100vw; */
+  background: #fafafa;
+  height: 100%;
+  width: 100%;
 `;
 
 const PageWrapper = styled.div`
   padding-top: 90px;
   max-width: 975px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
+  background: #fafafa;
 `;
 
 const Left = styled.div`
