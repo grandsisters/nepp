@@ -23,6 +23,7 @@ import { ReactComponent as ImgWriteMessage } from "./writeMessage.svg";
 import { ReactComponent as ImgCheck } from "./check.svg";
 import { ReactComponent as ImgXBtn } from "./XBtn.svg";
 import { ReactComponent as ImgArrow } from "./arrow.svg";
+import { ReactComponent as ImgMeta } from "./meta.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 import ImgBackground from "./backgroundImg.jpg";
@@ -57,4 +58,5 @@ export {
   ImgCheck,
   ImgXBtn,
   ImgArrow,
+  ImgMeta,
 };
