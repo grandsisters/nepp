@@ -15,6 +15,9 @@ export { default as ModalPostList } from "./ModalPostList";
 export { default as ActivityDropdown } from "./ActivityDropdown";
 export { default as FooterNav } from "./FooterNav";
 
+export { default as SettingLeftSide } from "./SettingLeftSide";
+export { default as SettingRightSide } from "./SettingRightSide";
+
 export { default as ProfileIndex } from "./profile/Index";
 export { default as ProfileSaved } from "./profile/Saved";
 export { default as ProfileTagged } from "./profile/Tagged";

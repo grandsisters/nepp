@@ -7,7 +7,7 @@ const ProfileDropdown = ({ onClose, onModal }) => {
   const itemList = [
     { link: "/profile/index", image: <ImgProfile />, name: "프로필" },
     { link: "/profile/saved", image: <ImgSaved />, name: "저장됨" },
-    { link: "/setting", image: <ImgSetting />, name: "설정" },
+    { link: "/setting/edit", image: <ImgSetting />, name: "설정" },
   ];
 
   return (
