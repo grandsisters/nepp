@@ -1,57 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ImgProfile, ImgSaved, ImgSetting, ImgChangeAccount } from "../../assets/images";
-import ModalAccountChange from "../organisms/ModalAccountChange";
 
-const ProfileDropdown = ({ onClose }) => {
+const ProfileDropdown = ({ onClose, onModal }) => {
   const itemList = [
     { link: "/profile/index", image: <ImgProfile />, name: "프로필" },
     { link: "/profile/saved", image: <ImgSaved />, name: "저장됨" },
     { link: "/setting", image: <ImgSetting />, name: "설정" },
   ];
 
-  const [showModal, setShowModal] = useState(false);
-
-  const handleModal = () => {
-    setShowModal(!showModal);
-  };
-
-  useEffect(() => {
-    document.body.style.overflow = showModal ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showModal]);
-
   return (
-    <div onClick={onClose}>
-      {showModal && <ModalAccountChange onClose={handleModal} />}
-      <Backdrop />
-      <ProfileWrapper>
-        <DropdownMenu>
-          {itemList.map((e, i) => (
-            <Link to={e.link} key={i}>
-              <Item>
-                {e.image}
-                <ItemName>{e.name}</ItemName>
-              </Item>
+    <>
+      <div onClick={onClose}>
+        <Backdrop />
+        <ProfileWrapper>
+          <DropdownMenu>
+            {itemList.map((e, i) => (
+              <Link to={e.link} key={i}>
+                <Item>
+                  {e.image}
+                  <ItemName>{e.name}</ItemName>
+                </Item>
+              </Link>
+            ))}
+
+            <Item onClick={onModal}>
+              <ImgChangeAccount />
+              <ItemName>계정 전환</ItemName>
+            </Item>
+
+            <HR />
+            <Link to="/login">
+              <Item>로그아웃</Item>
             </Link>
-          ))}
-
-          <Item onClick={() => setShowModal(!showModal)}>
-            <ImgChangeAccount />
-            <ItemName>계정 전환</ItemName>
-          </Item>
-
-          <HR />
-          <Link to="/login">
-            <Item>로그아웃</Item>
-          </Link>
-        </DropdownMenu>
-        <LittleThis />
-      </ProfileWrapper>
-    </div>
+          </DropdownMenu>
+          <LittleThis />
+        </ProfileWrapper>
+      </div>
+    </>
   );
 };
 

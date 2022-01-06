@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { Link, Outlet, NavLink } from "react-router-dom";
 import { ImgHome, ImgMessage, ImgNew, ImgExplore, ImgActivity, ImgProfileLogo, ImgBlackActivity, ImgSelectedNew, ImgBlackHome, ImgBlackMessage, ImgBlackExplore } from "../../assets/images";
 import { ProfileDropdown, ModalTopNav, ActivityDropdown } from ".";
+import ModalAccountChange from "../organisms/ModalAccountChange";
 
 const TopNav = () => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
@@ -27,6 +28,19 @@ const TopNav = () => {
   const handleActivityDropdown = () => {
     setShowActivityDropdown(!showActivityDropdown);
   };
+
+  const [showChangeAccountModal, setShowshowChangeAccountModal] = useState(false);
+
+  const handleshowChangeAccountModal = () => {
+    setShowshowChangeAccountModal(!showChangeAccountModal);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = showModal || showChangeAccountModal ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showModal, showChangeAccountModal]);
 
   return (
     <>
@@ -72,7 +86,8 @@ const TopNav = () => {
 
             <ProfileDropdownWrapper active={showProfileDropdown}>
               <ProfileImg src={ImgProfileLogo} onClick={() => setShowProfileDropdown(true)} />
-              {showProfileDropdown && <ProfileDropdown onClose={handleProfileDropdown} />}
+              {showProfileDropdown && <ProfileDropdown onClose={handleProfileDropdown} onModal={handleshowChangeAccountModal} />}
+              {showChangeAccountModal && <ModalAccountChange onClose={() => setShowshowChangeAccountModal(!showChangeAccountModal)} />}
             </ProfileDropdownWrapper>
           </NavMenu>
         </HeaderWrapper>

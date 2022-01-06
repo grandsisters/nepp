@@ -46,7 +46,6 @@ const ActivityLists = styled.ul`
   background: #fff;
   position: relative;
   z-index: 1;
-  /* padding-bottom: 50px; */
   display: flex;
   flex-direction: column;
 

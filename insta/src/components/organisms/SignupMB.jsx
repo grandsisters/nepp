@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AlsoDiv } from "../molecules";
 import { signup } from "../../apis/user";
 
-const Signup_MB = () => {
+const SignupMB = () => {
   const [signupData, setSignupData] = useState({});
 
   const handleChange = (e) => {
@@ -109,4 +109,4 @@ const SignupBtn = styled.button`
   font-weight: bolder;
 `;
 
-export default Signup_MB;
+export default SignupMB;

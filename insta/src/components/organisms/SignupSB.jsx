@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Signup_SB = () => {
+const SignupSB = () => {
   return (
     <SecondBlock>
       <p>
@@ -25,4 +25,4 @@ const SecondBlock = styled.div`
   }
 `;
 
-export default Signup_SB;
+export default SignupSB;

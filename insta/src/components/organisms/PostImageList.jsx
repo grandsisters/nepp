@@ -1,18 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useState } from "react";
 
 const PostImageList = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // const handlePrv = () => {
-  //   if (activeIndex === 0) return setActiveIndex(data.length - 1);
-  //   setActiveIndex(activeIndex - 1);
-  // };
-
-  // const handleNxt = () => {
-  //   if (data.length - 1 === activeIndex) return setActiveIndex(0);
-  //   setActiveIndex(activeIndex + 1);
-  // };
 
   const handleIndex = (n) => {
     setActiveIndex((prev) => prev + n);
@@ -20,11 +10,6 @@ const PostImageList = ({ data }) => {
 
   return (
     <Wrapper>
-      {/* <PostList>
-        {data.map((e, i) => (
-          <Post key={e.id} src={e.image} active={activeIndex === i} />
-        ))}
-      </PostList> */}
       <PostList activeIndex={activeIndex}>
         {data.map(({ id, image }) => (
           <Post key={id} src={image} />
@@ -41,7 +26,6 @@ const PostImageList = ({ data }) => {
 };
 
 const Wrapper = styled.section`
-  /* height: 600px; */
   position: relative;
   overflow: hidden;
 `;
@@ -54,22 +38,12 @@ const PostList = styled.ul`
 `;
 
 const Post = styled.img`
-  /* width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0;
-  ${(props) =>
-    props.active &&
-    css`
-      opacity: 1;
-    `} */
-
   min-width: 100%;
 `;
 
 const Btn = styled.button`
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 50%;
   border-radius: 50%;
   width: 35px;
