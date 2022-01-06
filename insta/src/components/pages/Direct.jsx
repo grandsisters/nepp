@@ -85,8 +85,6 @@ const Wrapper = styled.div`
   height: 100%;
   max-width: 935px;
   margin: 0 auto;
-
-  /* overflow: hidden; */
 `;
 
 const DirectBox = styled.div`

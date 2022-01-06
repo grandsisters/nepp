@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Login_MB, Login_SB, AppDownload, Carousel } from "../organisms";
+import { LoginMB, LoginSB, AppDownload, Carousel } from "../organisms";
 
 const Login = () => {
   return (
     <Wrapper>
       <Carousel />
       <LoginBlock>
-        <Login_MB />
-        <Login_SB />
+        <LoginMB />
+        <LoginSB />
         <AppDownload />
       </LoginBlock>
     </Wrapper>

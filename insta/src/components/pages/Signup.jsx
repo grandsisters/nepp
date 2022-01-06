@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Signup_MB, Signup_SB, AppDownload } from "../organisms";
+import { SignupMB, SignupSB, AppDownload } from "../organisms";
 
 const Signup = () => {
   return (
     <Wrapper>
-      <Signup_MB />
-      <Signup_SB />
+      <SignupMB />
+      <SignupSB />
       <AppDownload />
     </Wrapper>
   );

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { useState } from "react";
-import { ImgBackground, ImgGlasses } from "../../assets/images";
+import { ImgBackground, ImgGlasses, ImgArrow } from "../../assets/images";
 import CarouselBox from "../organisms/CarouselBox";
 
 const Landing = () => {
@@ -20,10 +20,10 @@ const Landing = () => {
           <Title2>제 포트폴리오 한번 봐주실래요?</Title2>
         </TitleBox>
         <GlassWrapper>
-          <GlassTalk active={activeTalkBox}>여기를 눌러주세요! ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓</GlassTalk>
           <Glasses src={ImgGlasses} onClick={handleTalk} />
+          <StyledImgArrow active={!activeTalkBox} />
         </GlassWrapper>
-        <PortfolioBox>
+        <PortfolioBox active={activeTalkBox}>
           <EachPortfolio>
             <Link to="/main">
               <LinkBtn>인스타그램</LinkBtn>
@@ -52,7 +52,6 @@ const Wrapper = styled.div`
 
 const BackgroundImg = styled.img`
   width: 100%;
-  /* height: 100%; */
 `;
 
 const IntroBox = styled.div`
@@ -65,11 +64,15 @@ const IntroBox = styled.div`
   justify-content: space-evenly;
 
   position: absolute;
+  top: 10%;
 
   color: #fff;
 `;
 
-const TitleBox = styled.div``;
+const TitleBox = styled.div`
+  position: absolute;
+  top: 10px;
+`;
 
 const Title = styled.h2`
   text-align: center;
@@ -79,7 +82,8 @@ const Title2 = styled.h3`
 `;
 
 const GlassWrapper = styled.div`
-  position: relative;
+  position: absolute;
+  top: 150px;
   width: 190px;
   height: 190px;
   display: flex;
@@ -103,12 +107,14 @@ const Glasses = styled.img`
   }
 `;
 
-const GlassTalk = styled.span`
+const StyledImgArrow = styled(ImgArrow)`
   position: absolute;
-  top: 200px;
-  left: 24px;
-
   display: none;
+  top: -40px;
+  left: -150px;
+
+  width: 150px;
+  height: 150px;
 
   ${(props) =>
     props.active &&
@@ -118,11 +124,21 @@ const GlassTalk = styled.span`
 `;
 
 const PortfolioBox = styled.div`
+  position: absolute;
+  top: 350px;
   width: 80%;
   height: 50%;
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 20px;
+
+  display: none;
+
+  ${(props) =>
+    props.active &&
+    css`
+      display: block;
+    `}
 `;
 
 const EachPortfolio = styled.div`
