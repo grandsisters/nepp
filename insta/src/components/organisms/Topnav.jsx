@@ -4,6 +4,7 @@ import { Link, Outlet, NavLink } from "react-router-dom";
 import { ImgHome, ImgMessage, ImgNew, ImgExplore, ImgActivity, ImgProfileLogo, ImgBlackActivity, ImgSelectedNew, ImgBlackHome, ImgBlackMessage, ImgBlackExplore } from "../../assets/images";
 import { ProfileDropdown, ModalTopNav, ActivityDropdown } from ".";
 import ModalAccountChange from "../organisms/ModalAccountChange";
+import LandingPageIcon from "../molecules/LandingPageIcon";
 
 const TopNav = () => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
@@ -91,11 +92,14 @@ const TopNav = () => {
             </ProfileDropdownWrapper>
           </NavMenu>
         </HeaderWrapper>
+        <StyledLandingPageIcon />
       </Header>
       <Outlet />
     </>
   );
 };
+
+const StyledLandingPageIcon = styled(LandingPageIcon)``;
 
 const Header = styled.header`
   background: #fff;
