@@ -16,8 +16,10 @@ const Emails = () => {
           {checkBoxes.map((e, i) => (
             <EachCheckBox key={i}>
               <CheckCombie>
-                <CheckInput type="checkbox" />
-                <CheckInputSpan>{e.name}</CheckInputSpan>
+                <label>
+                  <CheckInput type="checkbox" />
+                  <CheckInputSpan>{e.name}</CheckInputSpan>
+                </label>
               </CheckCombie>
               <Text>{e.text}</Text>
             </EachCheckBox>

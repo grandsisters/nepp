@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { ImgProfileLogo } from "../../../assets/images";
 
 const Password = () => {
+  const Btn = (e) => {
+    e.preventDefault();
+  };
   return (
     <Wrapper>
       <ProfilePhotoBox>
@@ -36,8 +39,8 @@ const Password = () => {
         <EachInputBox>
           <Label></Label>
           <LastInputBox>
-            <SubmissionBtn>비밀번호 변경</SubmissionBtn>
-            <AccountInActivityBtn>비밀번호를 잊으셨나요?</AccountInActivityBtn>
+            <SubmissionBtn onClick={Btn}>비밀번호 변경</SubmissionBtn>
+            <AccountInActivityBtn onClick={Btn}>비밀번호를 잊으셨나요?</AccountInActivityBtn>
           </LastInputBox>
         </EachInputBox>
       </MainBox>

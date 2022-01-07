@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { ImgProfileLogo } from "../../../assets/images";
 
 const Edit = () => {
+  const Btn = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Wrapper>
       <ProfilePhotoBox>
@@ -60,7 +64,7 @@ const Edit = () => {
           <Label>이메일</Label>
           <InputBox>
             <Input value={"grandsisters@gmail.com"} readOnly />
-            <ConfirmBtn>이메일 확인</ConfirmBtn>
+            <ConfirmBtn onClick={Btn}>이메일 확인</ConfirmBtn>
           </InputBox>
         </EachInputBox>
       </MainBox>
@@ -84,8 +88,10 @@ const Edit = () => {
         <EachInputBox>
           <Label>비슷한 계정 추천</Label>
           <CheckInputBox>
-            <CheckBox type="checkbox" />
-            <CheckBoxText>팔로우할 만한 비슷한 계정을 추천할 때 회원님의 계정을 포함합니다.</CheckBoxText>
+            <label>
+              <CheckBox type="checkbox" />
+              <CheckBoxText>팔로우할 만한 비슷한 계정을 추천할 때 회원님의 계정을 포함합니다.</CheckBoxText>
+            </label>
           </CheckInputBox>
         </EachInputBox>
       </MainBox>
@@ -93,8 +99,8 @@ const Edit = () => {
         <EachInputBox>
           <Label></Label>
           <LastInputBox>
-            <SubmissionBtn>제출</SubmissionBtn>
-            <AccountInActivityBtn>계정을 일시적으로 비활성화</AccountInActivityBtn>
+            <SubmissionBtn onClick={Btn}>제출</SubmissionBtn>
+            <AccountInActivityBtn onClick={Btn}>계정을 일시적으로 비활성화</AccountInActivityBtn>
           </LastInputBox>
         </EachInputBox>
       </MainBox>
