@@ -25,7 +25,7 @@ const Router = () => {
             <Route path="password" element={<Password />} />
 
             <Route path="manageAccess" element={<ManageAccess />}>
-              <Route path="actived" element={<Actived />} />
+              <Route index element={<Actived />} />
               <Route path="expired" element={<Expired />} />
               <Route path="deleted" element={<Deleted />} />
             </Route>
