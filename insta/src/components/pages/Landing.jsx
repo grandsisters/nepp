@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { useState } from "react";
 import { ImgBackground, ImgGlasses, ImgArrow } from "../../assets/images";
-import CarouselBox from "../organisms/CarouselBox";
+import CarouselController from "../organisms/CarouselController";
+import LetMEIntroduce from "../organisms/PortFolioes/LetMeIntroduce";
 
 const Landing = () => {
   const [activeTalkBox, setactiveTalkBox] = useState(false);
@@ -24,13 +24,11 @@ const Landing = () => {
           <StyledImgArrow active={!activeTalkBox} />
         </GlassWrapper>
         <PortfolioBox active={activeTalkBox}>
-          <EachPortfolio>
-            <Link to="/login">
-              <LinkBtn>인스타그램</LinkBtn>
-            </Link>
-            <CarouselBox />
-          </EachPortfolio>
+          <CarouselController />
         </PortfolioBox>
+        <IntroduceBox active={!activeTalkBox}>
+          <LetMEIntroduce />
+        </IntroduceBox>
       </IntroBox>
     </Wrapper>
   );
@@ -64,14 +62,14 @@ const IntroBox = styled.div`
   justify-content: space-evenly;
 
   position: absolute;
-  top: 10%;
+  top: 40px;
 
   color: #fff;
 `;
 
 const TitleBox = styled.div`
   position: absolute;
-  top: 10px;
+  top: 0;
 `;
 
 const Title = styled.h2`
@@ -110,11 +108,11 @@ const Glasses = styled.img`
 const StyledImgArrow = styled(ImgArrow)`
   position: absolute;
   display: none;
-  top: -40px;
-  left: -150px;
+  top: -55px;
+  left: -200px;
 
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
   ${(props) =>
     props.active &&
@@ -125,7 +123,7 @@ const StyledImgArrow = styled(ImgArrow)`
 
 const PortfolioBox = styled.div`
   position: absolute;
-  top: 350px;
+  top: 400px;
   width: 80%;
   height: 50%;
   background: rgba(0, 0, 0, 0.5);
@@ -141,31 +139,21 @@ const PortfolioBox = styled.div`
     `}
 `;
 
-const EachPortfolio = styled.div`
-  width: 100%;
-  height: 100%;
+const IntroduceBox = styled.div`
+  position: absolute;
+  top: 350px;
+  width: 20%;
+  height: 55%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 20px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  display: none;
+
+  ${(props) =>
+    props.active &&
+    css`
+      display: block;
+    `}
 `;
-
-const LinkBtn = styled.button`
-  border: none;
-  border-radius: 15px;
-  width: 90px;
-  height: 20px;
-  background: rgb(54, 172, 250);
-  margin-bottom: 20px;
-
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-
-  &:active {
-    background: rgb(35, 107, 155);
-  }
-`;
-
 export default Landing;
