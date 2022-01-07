@@ -8,7 +8,7 @@ const ManageAccess = () => {
         <Title>앱 및 웹사이트</Title>
         <Box>
           <DetailTitles>
-            <StyledNavLink to="actived">
+            <StyledNavLink end to="">
               <EachTitle>활성</EachTitle>
             </StyledNavLink>
             <StyledNavLink to="expired">

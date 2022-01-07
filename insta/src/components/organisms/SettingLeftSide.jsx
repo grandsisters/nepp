@@ -6,7 +6,7 @@ const SettingLeftSide = () => {
   const LinkList = [
     { path: "edit", name: "프로필 편집" },
     { path: "password", name: "비밀번호 변경" },
-    { path: "manageAccess/actived", name: "앱 및 웹사이트" },
+    { path: "manageAccess", name: "앱 및 웹사이트" },
     { path: "emails", name: "이메일 및 SMS" },
     { path: "push", name: "푸시 알림" },
     { path: "contract", name: "연락처 관리" },

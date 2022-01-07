@@ -22,4 +22,7 @@ export { default as ProfileIndex } from "./profile/Index";
 export { default as ProfileSaved } from "./profile/Saved";
 export { default as ProfileTagged } from "./profile/Tagged";
 
-export { default as CarouselBox } from "./CarouselBox";
+export { default as CarouselController } from "./CarouselController";
+export { default as InstaPortfolioCarousel } from "./PortFolioes/InstaPortfolioCarousel";
+export { default as Working } from "./PortFolioes/Working";
+export { default as LetMeIntroduce } from "./PortFolioes/LetMeIntroduce";

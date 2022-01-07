@@ -12,7 +12,7 @@ const Edit = () => {
         <ProfileImg src={ImgProfileLogo} />
         <IdBox>
           <ProfileId>grandsisters</ProfileId>
-          <ProfilePhotoChange>프로필 사진 바꾸기</ProfilePhotoChange>
+          <ProfilePhotoChange onClick={Btn}>프로필 사진 바꾸기</ProfilePhotoChange>
         </IdBox>
       </ProfilePhotoBox>
       <MainBox>
