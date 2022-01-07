@@ -25,6 +25,8 @@ import { ReactComponent as ImgXBtn } from "./XBtn.svg";
 import { ReactComponent as ImgArrow } from "./arrow.svg";
 import { ReactComponent as ImgMeta } from "./meta.svg";
 import { ReactComponent as ImgLandingPageIcon } from "./landingPageIcon.svg";
+import { ReactComponent as ImgWorking } from "./working.svg";
+import { ReactComponent as ImgBear } from "./bear.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 import ImgBackground from "./backgroundImg.jpg";
@@ -61,4 +63,6 @@ export {
   ImgArrow,
   ImgMeta,
   ImgLandingPageIcon,
+  ImgWorking,
+  ImgBear,
 };
