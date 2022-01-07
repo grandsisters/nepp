@@ -25,7 +25,7 @@ const Landing = () => {
         </GlassWrapper>
         <PortfolioBox active={activeTalkBox}>
           <EachPortfolio>
-            <Link to="/main">
+            <Link to="/login">
               <LinkBtn>인스타그램</LinkBtn>
             </Link>
             <CarouselBox />

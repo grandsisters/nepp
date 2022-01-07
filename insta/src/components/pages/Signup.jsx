@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: fixed;
   top: 10%;
-  left: 35%;
+  left: 40%;
 `;
 
 export default Signup;
