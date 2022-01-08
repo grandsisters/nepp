@@ -139,9 +139,7 @@ const IntroduceBox = styled.div`
   position: absolute;
   top: 320px;
   width: 20%;
-  height: 42%;
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
+  min-height: 50%;
   padding: 20px;
 
   display: none;
