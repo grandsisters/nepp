@@ -39,8 +39,8 @@ const BtnBox = styled.div``;
 const LinkBtn = styled.button`
   border: none;
   border-radius: 15px;
-  width: 90px;
-  height: 20px;
+  width: 100px;
+  height: 30px;
   background: yellow;
 
   color: grey;
