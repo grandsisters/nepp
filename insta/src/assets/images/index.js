@@ -27,6 +27,8 @@ import { ReactComponent as ImgMeta } from "./meta.svg";
 import { ReactComponent as ImgLandingPageIcon } from "./landingPageIcon.svg";
 import { ReactComponent as ImgWorking } from "./working.svg";
 import { ReactComponent as ImgBear } from "./bear.svg";
+import { ReactComponent as ImgLetter } from "./letter.svg";
+import { ReactComponent as ImgLetterOpen } from "./letterOpen.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 import ImgBackground from "./backgroundImg.jpg";
@@ -65,4 +67,6 @@ export {
   ImgLandingPageIcon,
   ImgWorking,
   ImgBear,
+  ImgLetter,
+  ImgLetterOpen,
 };
