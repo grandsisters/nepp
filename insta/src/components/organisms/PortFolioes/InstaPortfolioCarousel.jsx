@@ -41,15 +41,14 @@ const InstaPortfolioCarousel = () => {
       </MainBox>
 
       <TextBoxTwo>
-        <h3>사용기술</h3>
-        <p>라이브러리</p>
+        <h3>사용언어</h3>
+        <span>HTML / CSS / JavaScript</span>
+        <h3>라이브러리</h3>
         <span>react / </span>
         <span>styled-components / </span>
         <span>react-router-dom</span>
-        <p>툴</p>
-        <span>visual studio code</span>
-        <p>언어</p>
-        <span>html / css / javascript</span>
+        <h3>작업툴</h3>
+        <span>Visual Studio Code</span>
       </TextBoxTwo>
     </EachPortfolio>
   );
