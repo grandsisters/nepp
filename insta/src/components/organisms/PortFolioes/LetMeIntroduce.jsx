@@ -16,7 +16,15 @@ const LetMEIntroduce = () => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Title = styled.h2``;
 
