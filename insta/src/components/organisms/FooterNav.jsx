@@ -28,7 +28,7 @@ const FooterNav = () => {
   );
 };
 
-const Footer = styled.div`
+const Footer = styled.footer`
   position: absolute;
   bottom: 0;
 
