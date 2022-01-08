@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { useState } from "react";
-import { ImgBackground, ImgGlasses, ImgArrow } from "../../assets/images";
+import { ImgBackground, ImgBear, ImgArrow } from "../../assets/images";
 import CarouselController from "../organisms/CarouselController";
 import LetMEIntroduce from "../organisms/PortFolioes/LetMeIntroduce";
 
@@ -17,12 +17,11 @@ const Landing = () => {
       <IntroBox>
         <TitleBox>
           <Title>지구인 여러분 안녕하세요.</Title>
-          <Title2>제 포트폴리오 한번 봐주실래요?</Title2>
         </TitleBox>
-        <GlassWrapper>
-          <Glasses src={ImgGlasses} onClick={handleTalk} />
+        <BearWrapper>
+          <StyledImgBear onClick={handleTalk} />
           <StyledImgArrow active={!activeTalkBox} />
-        </GlassWrapper>
+        </BearWrapper>
         <PortfolioBox active={activeTalkBox}>
           <CarouselController />
         </PortfolioBox>
@@ -72,18 +71,13 @@ const TitleBox = styled.div`
   top: 0;
 `;
 
-const Announce = styled.span``;
-
 const Title = styled.h2`
   text-align: center;
 `;
-const Title2 = styled.h3`
-  text-align: center;
-`;
 
-const GlassWrapper = styled.div`
+const BearWrapper = styled.div`
   position: absolute;
-  top: 150px;
+  top: 100px;
   width: 190px;
   height: 190px;
   display: flex;
@@ -91,7 +85,7 @@ const GlassWrapper = styled.div`
   justify-content: center;
 `;
 
-const Glasses = styled.img`
+const StyledImgBear = styled(ImgBear)`
   width: 180px;
   height: 180px;
   border-radius: 15px;
@@ -110,11 +104,11 @@ const Glasses = styled.img`
 const StyledImgArrow = styled(ImgArrow)`
   position: absolute;
   display: none;
-  top: -55px;
-  left: -200px;
+  top: 15px;
+  left: 200px;
 
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
 
   ${(props) =>
     props.active &&
@@ -125,7 +119,7 @@ const StyledImgArrow = styled(ImgArrow)`
 
 const PortfolioBox = styled.div`
   position: absolute;
-  top: 400px;
+  top: 320px;
   width: 80%;
   height: 50%;
   background: rgba(0, 0, 0, 0.5);
@@ -143,9 +137,9 @@ const PortfolioBox = styled.div`
 
 const IntroduceBox = styled.div`
   position: absolute;
-  top: 350px;
+  top: 320px;
   width: 20%;
-  height: 55%;
+  height: 42%;
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 20px;
