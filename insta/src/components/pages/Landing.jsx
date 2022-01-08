@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { useState } from "react";
-import { ImgBackground, ImgBear, ImgArrow } from "../../assets/images";
+import { ImgBackground, ImgBear } from "../../assets/images";
 import CarouselController from "../organisms/CarouselController";
 import LetMEIntroduce from "../organisms/PortFolioes/LetMeIntroduce";
 
@@ -20,7 +20,6 @@ const Landing = () => {
         </TitleBox>
         <BearWrapper>
           <StyledImgBear onClick={handleTalk} />
-          <StyledImgArrow active={!activeTalkBox} />
         </BearWrapper>
         <PortfolioBox active={activeTalkBox}>
           <CarouselController />
@@ -99,22 +98,6 @@ const StyledImgBear = styled(ImgBear)`
     width: 130px;
     height: 130px;
   }
-`;
-
-const StyledImgArrow = styled(ImgArrow)`
-  position: absolute;
-  display: none;
-  top: 15px;
-  left: 200px;
-
-  width: 140px;
-  height: 140px;
-
-  ${(props) =>
-    props.active &&
-    css`
-      display: block;
-    `}
 `;
 
 const PortfolioBox = styled.div`
