@@ -35,7 +35,7 @@ const Landing = () => {
 };
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: black;
 
@@ -71,6 +71,8 @@ const TitleBox = styled.div`
   position: absolute;
   top: 0;
 `;
+
+const Announce = styled.span``;
 
 const Title = styled.h2`
   text-align: center;
