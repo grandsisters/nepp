@@ -1,7 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProfileTagged, ProfileSaved, ProfileIndex, TopNav } from "./components/organisms";
 import { Login, Signup, Main, Profile, Landing, Setting, Direct, Explore } from "./components/pages";
-import { Contract, Edit, Emails, EmailsSent, Help, LoginActivity, ManageAccess, Password, Privacy, Push, Actived, Expired, Deleted } from "../src/components/organisms/setting";
+import {
+  Contract,
+  Edit,
+  Emails,
+  EmailsSent,
+  Help,
+  LoginActivity,
+  ManageAccess,
+  Password,
+  Privacy,
+  Push,
+  Actived,
+  Expired,
+  Deleted,
+  Security,
+  ETC,
+  PAHelp,
+  Request,
+  HelpMenu,
+  RequestMenu,
+  Declaration,
+  Violation,
+} from "../src/components/organisms/setting";
 
 const Router = () => {
   return (
@@ -34,8 +56,19 @@ const Router = () => {
             <Route path="contract" element={<Contract />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="loginActivity" element={<LoginActivity />} />
-            <Route path="emailsSent" element={<EmailsSent />} />
-            <Route path="help" element={<Help />} />
+            <Route path="emailsSent" element={<EmailsSent />}>
+              <Route index element={<Security />} />
+              <Route path="etc" element={<ETC />} />
+            </Route>
+            <Route path="help" element={<Help />}>
+              <Route index element={<HelpMenu />} />
+              <Route path="pahelp" element={<PAHelp />} />
+              <Route path="request" element={<Request />}>
+                <Route index element={<RequestMenu />} />
+                <Route path="declaration" element={<Declaration />} />
+                <Route path="violation" element={<Violation />} />
+              </Route>
+            </Route>
           </Route>
         </Route>
         <Route path="/login" element={<Login />} />
