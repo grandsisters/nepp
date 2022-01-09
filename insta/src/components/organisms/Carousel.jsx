@@ -18,7 +18,7 @@ const Carousel = () => {
 
       setActiveIndex(nextIndex);
     };
-    setInterval(changeActiveIndex, 6000);
+    setInterval(changeActiveIndex, 3000);
     return () => {
       clearInterval(changeActiveIndex);
     };
@@ -50,13 +50,13 @@ const Image = styled.img`
   top: 96px;
   left: 148px;
   opacity: 0;
-  transition: opacity 2s ease-in;
+  transition: opacity 1.4s ease-in;
 
   ${(props) =>
     props.active &&
     css`
       opacity: 1;
-      transition: opacity 2s ease-out;
+      transition: opacity 1.4s ease-out;
     `};
 `;
 
