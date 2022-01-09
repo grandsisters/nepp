@@ -29,10 +29,14 @@ import { ReactComponent as ImgWorking } from "./working.svg";
 import { ReactComponent as ImgBear } from "./bear.svg";
 import { ReactComponent as ImgLetter } from "./letter.svg";
 import { ReactComponent as ImgLetterOpen } from "./letterOpen.svg";
+import { ReactComponent as ImgUnderArrow } from "./underArrow.svg";
+import { ReactComponent as ImgExcalamationMark } from "./excalamationMark.svg";
+import { ReactComponent as ImgTitlePosition } from "./titlePosition.svg";
 
 import ImgProfileLogo from "./profileLogo.jpg";
 import ImgBackground from "./backgroundImg.jpg";
-import ImgGlasses from "./glasses.png";
+import ImgMap from "./map.jpg";
+import ImgPosition from "./position.png";
 
 export {
   ImgHome,
@@ -54,7 +58,6 @@ export {
   ImgModalX,
   ImgSelectedNew,
   ImgBackground,
-  ImgGlasses,
   ImgBlackHome,
   ImgBlackMessage,
   ImgBlackExplore,
@@ -69,4 +72,9 @@ export {
   ImgBear,
   ImgLetter,
   ImgLetterOpen,
+  ImgPosition,
+  ImgUnderArrow,
+  ImgExcalamationMark,
+  ImgMap,
+  ImgTitlePosition,
 };
