@@ -16,9 +16,10 @@ const Login = () => {
 };
 
 const Wrapper = styled.div`
-  position: fixed;
-  top: 10%;
-  left: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
 `;
