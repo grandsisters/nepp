@@ -35,7 +35,6 @@ const Footer = styled.footer`
   background: #fafafa;
   width: 100%;
   height: 60px;
-  z-index: 1;
 
   display: flex;
   flex-direction: column;

@@ -45,10 +45,11 @@ const DetailTitles = styled.div`
 `;
 
 const EachTitle = styled.p`
-  text-align: center;
-  width: 50px;
   font-weight: bold;
   color: #dbdbdb;
+
+  text-align: center;
+
   &:hover {
     cursor: pointer;
   }
@@ -59,9 +60,10 @@ const TextBox = styled.div`
 `;
 
 const StyledNavLink = styled(NavLink)`
+  width: 33.3%;
+  margin-bottom: -1px;
   &.active {
     border-bottom: 1px solid black;
-    margin-bottom: -1px;
   }
 
   &.active > p {

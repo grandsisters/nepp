@@ -61,8 +61,9 @@ const ModalBack = styled.div`
 const Modal = styled.div`
   width: 400px;
   position: fixed;
-  top: 30%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   background: #fff;
   border: 1px solid #dbdbdb;

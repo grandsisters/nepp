@@ -84,8 +84,9 @@ const Modal = styled.div`
   border-radius: 16px;
   z-index: 2;
   background: #fff;
-  left: 30%;
   top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0%);
   overflow: hidden;
 `;
 
